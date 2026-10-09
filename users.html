@@ -1,0 +1,652 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>User Management - Campus Lost & Found</title>
+
+    <link rel="stylesheet" href="../css/style8.css">
+    <link rel="stylesheet" href="../css/users.css">
+</head>
+
+<body>
+
+    <!--  NAVBAR  -->
+
+<header class="portal-header">
+    <div class="portal-logo">🏫</div>
+    <div>
+        <h1>Campus Lost&Found Portal</h1>
+        
+    </div>
+</header>
+
+    <!-- HEADER  -->
+
+    <section class="reports-header">
+
+    <div>
+        <h1>User Management</h1>
+        <p>View and manage all lost, found and claim reports.</p>
+    </div>
+
+    <div class="reports-header-icon">
+        
+    </div>
+
+</section>
+
+    <!--  USER SUMMARY  -->
+
+    <section class="user-summary">
+
+        <div class="user-summary-card">
+
+            <div class="summary-icon">
+                👥
+            </div>
+
+            <div>
+                <h3 id="totalUsers">
+                    0
+                </h3>
+
+                <p>
+                    Total Users
+                </p>
+            </div>
+
+        </div>
+
+        <div class="user-summary-card">
+
+            <div class="summary-icon">
+                🎓
+            </div>
+
+            <div>
+                <h3 id="totalStudents">
+                    0
+                </h3>
+
+                <p>
+                    Students
+                </p>
+            </div>
+
+        </div>
+
+        <div class="user-summary-card">
+
+            <div class="summary-icon">
+                🛡️
+            </div>
+
+            <div>
+                <h3 id="totalSecurity">
+                    0
+                </h3>
+
+                <p>
+                    Security Staff
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="user-summary-card">
+
+            <div class="summary-icon">
+                👨‍💼
+            </div>
+
+            <div>
+
+                <h3 id="totalAdmins">
+                    0
+                </h3>
+
+                <p>
+                    Admins
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!--  USER MANAGEMENT  -->
+
+    <section class="users-section">
+
+        <!-- TOP BAR -->
+
+        <div class="users-top">
+
+            <div>
+
+                <h2>
+                    Registered Users
+                </h2>
+
+                <p>
+                    View and manage portal users.
+                </p>
+
+            </div>
+
+
+            <button
+                class="add-user-btn"
+                onclick="openAddUserModal()">
+
+                + Add User
+
+            </button>
+
+        </div>
+
+        <!--  FILTERS  -->
+
+        <div class="user-filters">
+
+            <div class="user-search">
+
+                <label for="userSearch">
+                    Search User
+                </label>
+
+                <input
+                    type="text"
+                    id="userSearch"
+                    placeholder="Search by name, email or student ID..."
+                    onkeyup="filterUsers()">
+
+            </div>
+
+            <div>
+
+                <label for="roleFilter">
+                    Role
+                </label>
+
+                <select
+                    id="roleFilter"
+                    onchange="filterUsers()">
+
+                    <option value="all">
+                        All Roles
+                    </option>
+
+                    <option value="student">
+                        Student
+                    </option>
+
+                    <option value="security">
+                        Security Staff
+                    </option>
+
+                    <option value="admin">
+                        Admin
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div>
+
+                <label for="statusFilter">
+                    Status
+                </label>
+
+                <select
+                    id="statusFilter"
+                    onchange="filterUsers()">
+
+                    <option value="all">
+                        All Status
+                    </option>
+
+                    <option value="active">
+                        Active
+                    </option>
+
+                    <option value="blocked">
+                        Blocked
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+        <!--  USER TABLE  -->
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            User
+                        </th>
+
+                        <th>
+                            Student ID/Staff ID
+                        </th>
+
+                        <th>
+                            Email
+                        </th>
+
+                        <th>
+                            Role
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                        <th>
+                            Joined
+                        </th>
+
+                        <th>
+                            Action
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="usersTableBody">
+
+                    <!-- Users will be loaded using JavaScript -->
+
+                    <tr>
+
+                        <td colspan="7"
+                            class="empty-table">
+
+                            👥 No users found
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+    <!--  ADD USER MODAL  -->
+
+    <div id="addUserModal" class="modal">
+
+        <div class="modal-content">
+
+            <button
+                class="close-btn"
+                onclick="closeAddUserModal()">
+
+                ×
+
+            </button>
+
+            <h2>
+                Add New User
+            </h2>
+
+            <form
+                id="addUserForm"
+                onsubmit="addUser(event)">
+
+                <div class="form-group">
+
+                    <label for="userName">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="userName"
+                        required
+                        placeholder="Enter full name">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="studentId">
+                        Student Roll No./Staff ID
+                    </label>
+
+                    <input
+                        type="text"
+                        id="studentId"
+                        placeholder="Enter student ID">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="userEmail">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="userEmail"
+                        required
+                        placeholder="Enter email">
+                
+                </div>
+
+                <div class="form-group">
+
+                    <label for="userPassword">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="userPassword"
+                        required
+                        placeholder="Enter password">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="userRole">
+                        Role
+                    </label>
+
+                    <select id="userRole" required>
+
+                        <option value="">
+                            Select Role
+                        </option>
+
+                        <option value="student">
+                            Student
+                        </option>
+
+                        <option value="security">
+                            Security Staff
+                        </option>
+
+                        <option value="admin">
+                            Admin
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="save-user-btn">
+
+                    Save User
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!--  EDIT USER MODAL  -->
+
+    <div id="editUserModal" class="modal">
+
+        <div class="modal-content">
+
+            <button
+                class="close-btn"
+                onclick="closeEditUserModal()">
+
+                ×
+
+            </button>
+
+
+            <h2>
+                Edit User
+            </h2>
+
+            <form
+                id="editUserForm"
+                onsubmit="updateUser(event)">
+
+                <input
+                    type="hidden"
+                    id="editUserId">
+
+                <div class="form-group">
+
+                    <label for="editUserName">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="editUserName"
+                        required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="editUserEmail">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="editUserEmail"
+                        required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="editUserRole">
+                        Role
+                    </label>
+
+                    <select id="editUserRole">
+
+                        <option value="student">
+                            Student
+                        </option>
+
+                        <option value="security">
+                            Security Staff
+                        </option>
+
+                        <option value="admin">
+                            Admin
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="editUserStatus">
+                        Status
+                    </label>
+
+                    <select id="editUserStatus">
+
+                        <option value="active">
+                            Active
+                        </option>
+
+                        <option value="blocked">
+                            Blocked
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="save-user-btn">
+
+                    Update User
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <nav class="bottom-navigation">
+
+        <a href="admin-dashboard.html"
+           class="bottom-nav-item active">
+
+            <span class="bottom-nav-icon">🏠</span>
+
+            <span class="bottom-nav-text">
+                Dashboard
+            </span>
+
+        </a>
+
+        <a href="reports.html"
+           class="bottom-nav-item">
+
+            <span class="bottom-nav-icon">📋</span>
+
+            <span class="bottom-nav-text">
+                Reports
+            </span>
+
+        </a>
+
+        <a href="users.html"
+           class="bottom-nav-item">
+
+            <span class="bottom-nav-icon">👥</span>
+
+            <span class="bottom-nav-text">
+                Users
+            </span>
+
+        </a>
+
+        <a href="analytics.html"
+           class="bottom-nav-item">
+
+            <span class="bottom-nav-icon">📊</span>
+
+            <span class="bottom-nav-text">
+                Analytics
+            </span>
+
+        </a>
+
+        <a href="#"
+           class="bottom-nav-item logout"
+           onclick="logout()">
+
+            <span class="bottom-nav-icon">🚪</span>
+
+            <span class="bottom-nav-text">
+                Logout
+            </span>
+
+        </a>
+
+    </nav>
+
+    <nav class="bottom-navigation">
+
+        <a href="admin-dashboard.html"
+           class="bottom-nav-item active">
+
+            <span class="bottom-nav-icon">🏠</span>
+
+            <span class="bottom-nav-text">
+                Dashboard
+            </span>
+
+        </a>
+
+        <a href="reports.html"
+           class="bottom-nav-item">
+
+            <span class="bottom-nav-icon">📋</span>
+
+            <span class="bottom-nav-text">
+                Reports
+            </span>
+
+        </a>
+
+        <a href="users.html"
+           class="bottom-nav-item">
+
+            <span class="bottom-nav-icon">👥</span>
+
+            <span class="bottom-nav-text">
+                Users
+            </span>
+
+        </a>
+
+        <a href="analytics.html"
+           class="bottom-nav-item">
+
+            <span class="bottom-nav-icon">📊</span>
+
+            <span class="bottom-nav-text">
+                Analytics
+            </span>
+
+        </a>
+
+        <a href="#"
+           class="bottom-nav-item logout"
+           onclick="logout()">
+
+            <span class="bottom-nav-icon">🚪</span>
+
+            <span class="bottom-nav-text">
+                Logout
+            </span>
+
+        </a>
+
+    </nav>
+
+    <!-- JAVASCRIPT  -->
+
+    <script src="../JS/db.js"></script>
+    <script src="../JS/auth.js"></script>
+    <script src="../JS/admin.js"></script>
+
+</body>
+</html>

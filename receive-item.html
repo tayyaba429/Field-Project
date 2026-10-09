@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Receive Found Item - Campus Lost & Found Portal</title>
+
+    <link rel="stylesheet" href="../css/style13.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/receive-item.css">
+</head>
+
+<body>
+
+    <!-- PORTAL HEADER -->
+
+    <header class="portal-header">
+
+        <div class="portal-logo">🏫
+            
+        </div>
+
+        <div>
+            <h1 style="color: #7c3aed;">Campus Lost&Found Portal</h1>
+            <p></p>
+        </div>
+
+    </header>
+
+    <!-- BLUE PAGE HEADER -->
+
+    <section class="receive-header">
+
+        <div>
+            <h1>Receive Found Item</h1>
+
+            <p>
+                Record and securely receive an item found on campus.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- MAIN FORM -->
+
+    <main class="receive-container">
+
+        <section class="receive-card">
+
+            <div class="section-title">
+                <h2>Found Item Details</h2>
+                <p>Enter the details of the item received at the security desk.</p>
+            </div>
+
+            <form id="receiveItemForm">
+
+                <!-- Item Name -->
+
+                <div class="form-group">
+
+                    <label for="itemTitle">
+                        Item Name <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="itemTitle"
+                        placeholder="Enter item name"
+                        required>
+
+                </div>
+
+                <!-- Category -->
+
+                <div class="form-group">
+
+                    <label for="category">
+                        Category <span>*</span>
+                    </label>
+
+                    <select id="category" required>
+
+                        <option value="">
+                            Select Category
+                        </option>
+
+                        <option value="Electronics">
+                            Electronics
+                        </option>
+
+                        <option value="Documents">
+                            Documents
+                        </option>
+
+                        <option value="Wallet">
+                            Wallet
+                        </option>
+
+                        <option value="Keys">
+                            Keys
+                        </option>
+
+                        <option value="Bag">
+                            Bag
+                        </option>
+
+                        <option value="Clothing">
+                            Clothing
+                        </option>
+
+                        <option value="Accessories">
+                            Accessories
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- Description -->
+
+                <div class="form-group">
+
+                    <label for="description">
+                        Item Description <span>*</span>
+                    </label>
+
+                    <textarea
+                        id="description"
+                        rows="4"
+                        placeholder="Describe the item, colour, brand, identifying marks, etc."
+                        required>
+                    </textarea>
+
+                </div>
+
+                <!-- Found Location -->
+
+                <div class="form-group">
+
+                    <label for="location">
+                        Found Location <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="location"
+                        placeholder="Example: Library, Canteen, Parking Area"
+                        required>
+
+                </div>
+
+                <!-- Date -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="foundDate">
+                            Found Date <span>*</span>
+                        </label>
+
+                        <input
+                            type="date"
+                            id="foundDate"
+                            required>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="foundTime">
+                            Found Time
+                        </label>
+
+                        <input
+                            type="time"
+                            id="foundTime">
+
+                    </div>
+
+                </div>
+
+                <!-- Person who submitted item -->
+
+                <div class="form-group">
+
+                    <label for="submittedBy">
+                        Submitted By
+                    </label>
+
+                    <input
+                        type="text"
+                        id="submittedBy"
+                        placeholder="Name of person who submitted the item">
+
+                </div>
+
+                <!-- Contact -->
+
+                <div class="form-group">
+
+                    <label for="contact">
+                        Contact Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="contact"
+                        placeholder="Enter contact number">
+
+                </div>
+
+                <!-- Storage Location -->
+
+                <div class="form-group">
+
+                    <label for="storageLocation">
+                        Storage Location <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="storageLocation"
+                        placeholder="Example: Security Room - Shelf A1"
+                        required>
+
+                </div>
+
+                <!-- Image -->
+
+                <div class="form-group">
+
+                    <label for="itemImage">
+                        Item Image
+                    </label>
+
+                    <input
+                        type="file"
+                        id="itemImage"
+                        accept="image/*">
+
+                    <small>
+                        Upload a clear image of the found item.
+                    </small>
+
+                </div>
+
+                <!-- Image Preview -->
+
+                <div
+                    id="imagePreviewContainer"
+                    class="image-preview-container"
+                    style="display:none;">
+
+                    <img
+                        id="imagePreview"
+                        src=""
+                        alt="Item Preview">
+
+                </div>
+
+                <!-- Buttons -->
+
+                <div class="form-buttons">
+
+                    <button
+                        type="reset"
+                        class="btn btn-secondary">
+                        Clear
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary">
+                        📦 Receive Item
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <!-- BOTTOM NAVIGATION -->
+
+    <nav class="bottom-navigation">
+
+        <a
+            href="security-dashboard.html"
+            class="bottom-nav-item">
+            <span class="bottom-nav-icon">🏠</span>
+            <span class="bottom-nav-text">Dashboard</span>
+        </a>
+
+        <a
+            href="receive-item.html"
+            class="bottom-nav-item active">
+            <span class="bottom-nav-icon">📦</span>
+            <span class="bottom-nav-text">Receive</span>
+        </a>
+
+        <a
+            href="verify-item.html"
+            class="bottom-nav-item">
+            <span class="bottom-nav-icon">🔍</span>
+            <span class="bottom-nav-text">Verify</span>
+        </a>
+
+
+        <a
+            href="approved-claims.html"
+            class="bottom-nav-item">
+            <span class="bottom-nav-icon">✅</span>
+            <span class="bottom-nav-text">Claims</span>
+        </a>
+
+        <a
+            href="#"
+            class="bottom-nav-item logout"
+            onclick="logout()">
+            <span class="bottom-nav-icon">🚪</span>
+            <span class="bottom-nav-text">Logout</span>
+        </a>
+
+    </nav>
+
+    <!-- JAVASCRIPT -->
+
+    <script src="../JS/db.js"></script>
+    <script src="../JS/auth.js"></script>
+    <script src="../JS/security.js"></script>
+
+</body>
+</html>

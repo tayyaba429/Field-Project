@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard - Campus Lost & Found</title>
+
+    <link rel="stylesheet" href="../css/style9.css">
+    <link rel="stylesheet" href="../css/admin-dashboard.css">
+</head>
+
+
+<body>
+<header class="portal-header">
+    <div class="portal-logo">🏫</div>
+    <div>
+        <h1 style="color: #7c3aed;">Campus Lost&Found Portal</h1>
+        
+    </div>
+</header>
+
+    <!--  MAIN CONTENT  -->
+
+    <main class="admin-main">
+
+        <!-- Header -->
+
+        <section class="dashboard-header">
+
+            <h1>Admin Dashboard</h1>
+
+            <p>
+                Manage campus lost & found activities,
+                users, claims and reports.
+            </p>
+
+        </section>
+
+        <!-- Dashboard Cards -->
+
+        <section class="dashboard-container">
+
+            <div class="dashboard-cards">
+
+                <div class="dashboard-card">
+                    <div class="card-icon">👥</div>
+                    <div class="card-content">
+                        <h3 id="totalUsers">0</h3>
+                        <p>Total Users</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="card-icon">🔍</div>
+                    <div class="card-content">
+                        <h3 id="lostItems">0</h3>
+                        <p>Lost Items</p>
+                    </div>
+                </div>
+
+
+                <div class="dashboard-card">
+                    <div class="card-icon">📦</div>
+                    <div class="card-content">
+                        <h3 id="foundItems">0</h3>
+                        <p>Found Items</p>
+                    </div>
+                </div>
+
+
+                <div class="dashboard-card">
+                    <div class="card-icon">⏳</div>
+                    <div class="card-content">
+                        <h3 id="pendingClaims">0</h3>
+                        <p>Pending Claims</p>
+                    </div>
+                </div>
+
+
+                <div class="dashboard-card">
+                    <div class="card-icon">✅</div>
+                    <div class="card-content">
+                        <h3 id="approvedClaims">0</h3>
+                        <p>Approved Claims</p>
+                    </div>
+                </div>
+
+
+                <div class="dashboard-card">
+                    <div class="card-icon">🎉</div>
+                    <div class="card-content">
+                        <h3 id="returnedItems">0</h3>
+                        <p>Returned Items</p>
+                    </div>
+                </div>
+
+
+                <div class="dashboard-card">
+                    <div class="card-icon">🛡️</div>
+                    <div class="card-content">
+                        <h3 id="securityStaff">0</h3>
+                        <p>Security Staff</p>
+                    </div>
+                </div>
+
+
+                <div class="dashboard-card">
+                    <div class="card-icon">🎓</div>
+                    <div class="card-content">
+                        <h3 id="students">0</h3>
+                        <p>Students</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Quick Actions -->
+
+          <!--  <section class="dashboard-section">
+
+                <h2>Quick Actions</h2>
+
+                <div class="quick-actions">
+
+                    <a href="reports.html" class="quick-action">
+                        📋
+                        <span>
+                            <b>Manage Reports</b>
+                            <small>View lost and found reports</small>
+                        </span>
+                    </a>
+
+                    <a href="users.html" class="quick-action">
+                        👥
+                        <span>
+                            <b>Manage Users</b>
+                            <small>Manage registered users</small>
+                        </span>
+                    </a>
+
+                    <a href="analytics.html" class="quick-action">
+                        📊
+                        <span>
+                            <b>View Analytics</b>
+                            <small>View portal statistics</small>
+                        </span>
+                    </a>
+
+                </div>
+
+            </section>-->
+
+            <!-- Recent Activity -->
+
+          <!--  <section class="dashboard-section">
+
+                <h2>Recent Activity</h2>
+
+                <div id="recentActivity">
+
+                    <div class="empty-activity">
+
+                        📭
+
+                        <h3>No Recent Activity</h3>
+
+                        <p>
+                            Recent activities will appear here.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </section>-->
+
+    </main>
+
+    <!--  BOTTOM NAVIGATION  -->
+
+    <nav class="bottom-navigation">
+
+        <a href="admin-dashboard.html"
+           class="bottom-nav-item active">
+
+            <span class="bottom-nav-icon">🏠</span>
+
+            <span class="bottom-nav-text">
+                Dashboard
+            </span>
+
+        </a>
+
+        <a href="reports.html"
+           class="bottom-nav-item">
+
+            <span class="bottom-nav-icon">📋</span>
+
+            <span class="bottom-nav-text">
+                Reports
+            </span>
+
+        </a>
+
+        <a href="users.html"
+           class="bottom-nav-item">
+
+            <span class="bottom-nav-icon">👥</span>
+
+            <span class="bottom-nav-text">
+                Users
+            </span>
+
+        </a>
+
+        <a href="analytics.html"
+           class="bottom-nav-item">
+
+            <span class="bottom-nav-icon">📊</span>
+
+            <span class="bottom-nav-text">
+                Analytics
+            </span>
+
+        </a>
+
+        <a href="#"
+           class="bottom-nav-item logout"
+           onclick="logout()">
+
+            <span class="bottom-nav-icon">🚪</span>
+
+            <span class="bottom-nav-text">
+                Logout
+            </span>
+
+        </a>
+
+    </nav>
+
+    <script src="../JS/db.js"></script>
+    <script src="../JS/auth.js"></script>
+    <script src="../JS/admin.js"></script>
+
+</body>
+</html>

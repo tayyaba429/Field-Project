@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Approved Claims - Campus Lost & Found Portal</title>
+
+    <link rel="stylesheet" href="../css/style15.css">
+    <link rel="stylesheet" href="../css/security-dashboard.css">
+    <link rel="stylesheet" href="../css/approved-claims.css">
+
+</head>
+
+<body>
+
+    <!-- PORTAL HEADER -->
+
+    <header class="portal-header">
+
+        <div class="portal-logo">
+            🏫
+        </div>
+
+        <div>
+            <h1>Campus Lost&Found Portal</h1>
+            <p></p>
+        </div>
+
+    </header>
+
+    <!-- BLUE PAGE HEADER -->
+
+    <section class="claims-header">
+
+        <div>
+            <h1>Approved Claims</h1>
+
+            <p>
+                View claims approved by the administrator and complete item handover.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- MAIN CONTENT -->
+
+    <main class="claims-container">
+
+        <!-- SUMMARY CARDS -->
+
+        <section class="claim-summary">
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    📋
+                </div>
+
+                <div>
+                    <h3 id="totalApprovedClaims">0</h3>
+                    <p>Approved Claims</p>
+                </div>
+
+            </div>
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    ⏳
+                </div>
+
+                <div>
+                    <h3 id="pendingHandovers">0</h3>
+                    <p>Pending Handovers</p>
+                </div>
+
+            </div>
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    🎉
+                </div>
+
+                <div>
+                    <h3 id="completedHandovers">0</h3>
+                    <p>Completed Handovers</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- SEARCH -->
+
+        <section class="claims-tools">
+
+            <div class="search-box">
+
+                <label for="claimSearch">
+                    Search Claim
+                </label>
+
+                <input
+                    type="text"
+                    id="claimSearch"
+                    placeholder="Search by student name, item or claim ID...">
+
+            </div>
+
+        </section>
+
+        <!-- APPROVED CLAIMS -->
+
+        <section class="claims-section">
+
+            <div class="section-title">
+
+                <div>
+                    <h2>Approved Claims</h2>
+
+                    <p>
+                        Students whose claims have been approved by Admin.
+                    </p>
+                </div>
+
+                <span
+                    id="claimCount"
+                    class="claim-count">
+                    0 Claims
+                </span>
+
+            </div>
+
+            <!-- Claims will be loaded using JavaScript -->
+
+            <div
+                id="approvedClaimsContainer"
+                class="approved-claims-container">
+
+                <div class="empty-state">
+
+                    <div class="empty-icon">
+                        ✅
+                    </div>
+
+                    <h3>No Approved Claims</h3>
+
+                    <p>
+                        Approved claims will appear here.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- HANDOVER MODAL -->
+
+    <div
+        id="handoverModal"
+        class="modal"
+        style="display: none;">
+        <div class="modal-content">
+
+            <button
+                type="button"
+                class="modal-close"
+                onclick="closeHandoverModal()">
+                ×
+            </button>
+
+            <h2>Complete Handover</h2>
+
+            <p class="modal-description">
+                Ask the student for the 4-digit handover code generated after claim approval.
+            </p>
+
+            <div
+                id="claimDetails"
+                class="claim-details">
+            </div>
+
+            <div class="code-section">
+
+                <label for="handoverCode">
+                    Enter 4-Digit Handover Code
+                </label>
+
+                <input
+                    type="text"
+                    id="handoverCode"
+                    maxlength="4"
+                    inputmode="numeric"
+                    placeholder="0000">
+
+            </div>
+
+            <p
+                id="handoverMessage"
+                class="handover-message">
+            </p>
+
+            <div class="modal-buttons">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    onclick="closeHandoverModal()">
+                    Cancel
+                </button>
+
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    onclick="verifyHandoverCode()">
+                     Verify & Handover
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- BOTTOM NAVIGATION -->
+
+    <nav class="bottom-navigation">
+
+        <a
+            href="security-dashboard.html"
+            class="bottom-nav-item">
+            <span class="bottom-nav-icon">🏠</span>
+            <span class="bottom-nav-text">Dashboard</span>
+        </a>
+
+        <a
+            href="receive-item.html"
+            class="bottom-nav-item">
+            <span class="bottom-nav-icon">📦</span>
+            <span class="bottom-nav-text">Receive</span>
+        </a>
+
+        <a
+            href="verify-item.html"
+            class="bottom-nav-item">
+            <span class="bottom-nav-icon">🔍</span>
+            <span class="bottom-nav-text">Verify</span>
+        </a>
+
+        <a
+            href="approved-claims.html"
+            class="bottom-nav-item active">
+            <span class="bottom-nav-icon">✅</span>
+            <span class="bottom-nav-text">Claims</span>
+        </a>
+
+        <a
+            href="#"
+            class="bottom-nav-item logout"
+            onclick="logout()">
+            <span class="bottom-nav-icon">🚪</span>
+            <span class="bottom-nav-text">Logout</span>
+        </a>
+
+    </nav>
+
+    <!-- JAVASCRIPT -->
+
+    <script src="../JS/db.js"></script>
+    <script src="../JS/auth.js"></script>
+    <script src="../JS/security.js"></script>
+
+</body>
+</html>

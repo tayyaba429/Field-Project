@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reports - Campus Lost & Found</title>
+
+    <link rel="stylesheet" href="../css/style9.css">
+    
+    <link rel="stylesheet" href="../css/reports.css">
+</head>
+
+<body>
+
+    <!--  MAIN CONTENT  -->
+
+    <header class="portal-header">
+    <div class="portal-logo">🏫</div>
+    <div>
+        <h1 style="color: #743dd5;">Campus Lost&Found Portal</h1>
+        
+    </div>
+</header>
+
+    <main class="reports-main">
+
+        <!-- Header -->
+
+        <section class="reports-header">
+
+            <h1>Reports Management</h1>
+
+            <p>
+                View and manage all lost, found and claim reports.
+            </p>
+
+        </section>
+
+        <!--  SUMMARY CARDS  -->
+
+        <section class="reports-container">
+
+            <div class="report-summary">
+
+                <!-- Total Reports -->
+
+                <div class="report-card">
+
+                    <div class="report-icon">
+                        📋
+                    </div>
+
+                    <div>
+                        <h3 id="totalReports">0</h3>
+                        <p>Total Reports</p>
+                    </div>
+
+                </div>
+
+                <!-- Lost -->
+
+                <div class="report-card">
+
+                    <div class="report-icon">
+                        🔍
+                    </div>
+
+                    <div>
+                        <h3 id="lostReports">0</h3>
+                        <p>Lost Reports</p>
+                    </div>
+
+                </div>
+
+
+                <!-- Found -->
+
+                <div class="report-card">
+
+                    <div class="report-icon">
+                        📦
+                    </div>
+
+                    <div>
+                        <h3 id="foundReports">0</h3>
+                        <p>Found Reports</p>
+                    </div>
+
+                </div>
+
+                <!-- Pending Claims -->
+
+                <div class="report-card">
+
+                    <div class="report-icon">
+                        ⏳
+                    </div>
+
+                    <div>
+                        <h3 id="pendingReports">0</h3>
+                        <p>Pending Claims</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!--  FILTER SECTION  -->
+
+            <section class="reports-section">
+
+                <div class="reports-section-header">
+
+                    <div>
+                        <h2>All Reports</h2>
+
+                        <p>
+                            Search and filter submitted reports.
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- Filters -->
+
+                <div class="report-filters">
+
+                    <!-- Search -->
+
+                    <div class="filter-group">
+
+                        <label for="reportSearch">
+                            Search
+                        </label>
+
+                        <input
+                            type="text"
+                            id="reportSearch"
+                            placeholder="Search item..."
+                            onkeyup="filterReports()">
+
+                    </div>
+
+                    <!-- Type -->
+
+                    <div class="filter-group">
+
+                        <label for="reportType">
+                            Type
+                        </label>
+
+                        <select
+                            id="reportType"
+                            onchange="filterReports()">
+
+                            <option value="all">
+                                All
+                            </option>
+
+                            <option value="Lost">
+                                Lost
+                            </option>
+
+                            <option value="Found">
+                                Found
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- Category -->
+
+                    <div class="filter-group">
+
+                        <label for="reportCategory">
+                            Category
+                        </label>
+
+                        <select
+                            id="reportCategory"
+                            onchange="filterReports()">
+
+                            <option value="all">
+                                All Categories
+                            </option>
+
+                            <option value="Electronics">
+                                Electronics
+                            </option>
+
+                            <option value="Documents">
+                                Documents
+                            </option>
+
+                            <option value="Wallet">
+                                Wallet
+                            </option>
+
+                            <option value="Keys">
+                                Keys
+                            </option>
+
+                            <option value="Bag">
+                                Bag
+                            </option>
+
+                            <option value="Clothing">
+                                Clothing
+                            </option>
+
+                            <option value="Accessories">
+                                Accessories
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- Status -->
+
+                    <div class="filter-group">
+
+                        <label for="reportStatus">
+                            Status
+                        </label>
+
+                        <select
+                            id="reportStatus"
+                            onchange="filterReports()">
+
+                            <option value="all">
+                                All Status
+                            </option>
+
+                            <option value="Pending">
+                                Pending
+                            </option>
+
+                            <option value="Active">
+                                Active
+                            </option>
+
+                            <option value="Claimed">
+                                Claimed
+                            </option>
+
+                            <option value="Returned">
+                                Returned
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <!--  REPORT TABLE  -->
+
+                <div class="reports-table-container">
+
+                    <table class="reports-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Item</th>
+
+                                <th>Type</th>
+
+                                <th>Category</th>
+
+                                <th>Location</th>
+
+                                <th>Date</th>
+
+                                <th>Status</th>
+
+                                <th>Action</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="reportsTableBody">
+
+                            <!-- Data will be loaded using JavaScript -->
+
+                            <tr class="empty-row">
+
+                                <td colspan="7">
+
+                                    <div class="empty-reports">
+
+                                        <div>
+                                            📭
+                                        </div>
+
+                                        <h3>
+                                            No Reports Found
+                                        </h3>
+
+                                        <p>
+                                            Lost and found reports
+                                            will appear here.
+                                        </p>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <!-- REPORT DETAILS MODAL -->
+
+    <div
+        class="report-modal"
+        id="reportModal">
+
+        <div class="report-modal-content">
+
+            <button
+                class="modal-close"
+                onclick="closeReportModal()">
+                ×
+            </button>
+
+            <h2>
+                Report Details
+            </h2>
+
+            <div id="reportDetails">
+
+                <!-- Details loaded by JavaScript -->
+
+            </div>
+
+            <div class="modal-actions">
+
+                <button
+                    class="close-btn"
+                    onclick="closeReportModal()">
+                    Close
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!--  BOTTOM NAVIGATION  -->
+
+    <nav class="bottom-navigation">
+
+        <a
+            href="admin-dashboard.html"
+            class="bottom-nav-item">
+
+            <span class="bottom-nav-icon">
+                🏠
+            </span>
+
+            <span class="bottom-nav-text">
+                Dashboard
+            </span>
+
+        </a>
+
+        <a
+            href="reports.html"
+            class="bottom-nav-item active">
+
+            <span class="bottom-nav-icon">
+                📋
+            </span>
+
+            <span class="bottom-nav-text">
+                Reports
+            </span>
+
+        </a>
+
+        <a
+            href="users.html"
+            class="bottom-nav-item">
+
+            <span class="bottom-nav-icon">
+                👥
+            </span>
+
+            <span class="bottom-nav-text">
+                Users
+            </span>
+
+        </a>
+
+        <a
+            href="analytics.html"
+            class="bottom-nav-item">
+
+            <span class="bottom-nav-icon">
+                📊
+            </span>
+
+            <span class="bottom-nav-text">
+                Analytics
+            </span>
+
+        </a>
+
+        <a
+            href="#"
+            class="bottom-nav-item logout"
+            onclick="reportLogout()">
+        
+            <span class="bottom-nav-icon">
+                🚪
+            </span>
+
+            <span class="bottom-nav-text">
+                Logout
+            </span>
+
+        </a>
+
+    </nav>
+
+    <!--  JAVASCRIPT  -->
+
+    <script src="../JS/db.js"></script>
+    <script src="../JS/auth.js"></script>
+    <script src="../JS/admin.js"></script>
+</body>
+</html>

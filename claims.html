@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Claims - Campus Lost & Found</title>
+
+    <link rel="stylesheet" href="../css/style7.css">
+    <link rel="stylesheet" href="../css/claims.css">
+</head>
+
+<body>
+
+    <!--  NAVBAR  -->
+
+<header class="portal-header">
+    <div class="portal-logo">🏫</div>
+    <div>
+        <h1 style="color: #7c3aed;">Campus Lost&Found Portal</h1>
+        
+    </div>
+</header>
+
+</header>
+
+    <!--  PAGE HEADER  -->
+
+    <section class="claims-header">
+
+        <h1>My Claims</h1>
+
+        <p>
+            Track the status of your lost item claims
+            and collect approved items securely.
+        </p>
+
+    </section>
+
+    <!--  CLAIM SUMMARY  -->
+
+    <section class="claim-summary">
+
+        <div class="summary-card">
+
+            <div class="summary-icon">
+                📋
+            </div>
+
+            <div>
+                <h3 id="totalClaims">0</h3>
+                <p>Total Claims</p>
+            </div>
+
+        </div>
+
+        <div class="summary-card">
+
+            <div class="summary-icon">
+                ⏳
+            </div>
+
+            <div>
+                <h3 id="pendingClaims">0</h3>
+                <p>Pending</p>
+            </div>
+
+        </div>
+
+        <div class="summary-card">
+
+            <div class="summary-icon">
+                ✅
+            </div>
+
+            <div>
+                <h3 id="approvedClaims">0</h3>
+                <p>Approved</p>
+            </div>
+
+        </div>
+
+        <div class="summary-card">
+
+            <div class="summary-icon">
+                📦
+            </div>
+
+            <div>
+                <h3 id="returnedClaims">0</h3>
+                <p>Returned</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!--  FILTER  -->
+
+    <section class="claims-section">
+
+        <div class="claims-top">
+
+            <h2>Claim History</h2>
+
+            <select id="claimFilter"
+                    onchange="filterClaims()">
+
+                <option value="all">
+                    All Claims
+                </option>
+
+                <option value="pending">
+                    Pending
+                </option>
+
+                <option value="approved">
+                    Approved
+                </option>
+
+                <option value="rejected">
+                    Rejected
+                </option>
+
+                <option value="returned">
+                    Returned
+                </option>
+
+            </select>
+
+        </div>
+
+        <!--  CLAIMS CONTAINER  -->
+
+        <div id="claimsContainer">
+
+            <!-- Claims will be loaded by JavaScript -->
+
+            <div class="no-claims">
+
+                <div class="no-claims-icon">
+                    📋
+                </div>
+
+                <h3>No Claims Found</h3>
+
+                <p>
+                    You have not submitted any claims yet.
+                </p>
+
+                <a href="search.html"
+                   class="btn primary">
+
+                    Search Items
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!--  CLAIM DETAILS MODAL  -->
+
+    <div id="claimModal" class="modal">
+
+        <div class="modal-content">
+
+            <button class="close-btn"
+                    onclick="closeClaimModal()">
+
+                ×
+
+            </button>
+
+            <h2>Claim Details</h2>
+
+            <div id="claimDetails">
+
+                <!-- Claim details appear here -->
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!--  HANDOVER CODE MODAL  -->
+
+    <div id="codeModal" class="modal">
+
+        <div class="modal-content code-modal">
+
+            <button class="close-btn"
+                    onclick="closeCodeModal()">
+
+                ×
+
+            </button>
+
+            <div class="code-icon">
+                🔐
+            </div>
+
+            <h2>Handover Code</h2>
+
+            <p>
+                Show this code to the security staff
+                when collecting your item.
+            </p>
+
+            <div id="handoverCode"
+                 class="handover-code">
+
+                ----
+
+            </div>
+
+            <div class="security-warning">
+
+                ⚠️ Do not share this code with anyone
+                except authorized security staff.
+
+            </div>
+
+        </div>
+
+    </div>
+
+    
+
+<!--  BOTTOM NAVIGATION  -->
+
+<nav class="bottom-nav">
+
+    <a
+        href="dashboard.html"
+        class="nav-item active">
+
+        <span>🏠</span>
+
+        <small>
+            Home
+        </small>
+
+    </a>
+
+    <a
+        href="search.html"
+        class="nav-item">
+
+        <span>🔎</span>
+
+        <small>
+            Search
+        </small>
+
+    </a>
+
+    <a
+        href="claims.html"
+        class="nav-item">
+
+        <span>🤝</span>
+
+        <small>
+            Claims
+        </small>
+
+    </a>
+
+    <a
+        href="notifications.html"
+        class="nav-item">
+
+        <span>🔔</span>
+
+        <small>
+            Alerts
+        </small>
+
+    </a>
+
+    <a
+            href="#"
+            class="nav-item"
+            onclick="logout(); return false;">
+
+            <span>🚪</span>
+
+            <small>
+                Logout
+            </small>
+
+    </a>
+
+</nav>
+
+    <!--  JAVASCRIPT  -->
+
+    <script src="../JS/db.js"></script>
+    <script src="../JS/auth.js"></script>
+    <script src="../JS/claims.js"></script>
+</body>
+</html>

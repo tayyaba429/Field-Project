@@ -1,0 +1,1094 @@
+/* =====================================================
+   HANDOVER PAGE
+   ===================================================== */
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   PAGE HEADER
+   ===================================================== */
+
+.handover-header {
+
+    width: calc(100% - 40px);
+    max-width: 1400px;
+
+    margin: 30px auto;
+
+    padding: 35px 36px;
+
+    box-sizing: border-box;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #3b82f6
+        );
+
+    color: white;
+
+    border-radius: 20px;
+
+   box-shadow:
+        0 12px 30px
+        rgba(37, 99, 235, 0.20);
+
+        
+
+}
+
+
+.handover-header h1 {
+
+    margin: 0 0 8px;
+
+    font-size: 34px;
+
+    font-weight: 700;
+
+
+}
+
+
+.handover-header p {
+
+    margin: 0;
+
+    font-size: 16px;
+
+    opacity: 0.95;
+
+}
+
+
+/* =====================================================
+   MAIN
+   ===================================================== */
+
+.handover-container {
+
+    width: calc(100% - 40px);
+
+    max-width: 1400px;
+
+    margin: 0 auto 120px;
+
+}
+
+
+/* =====================================================
+   INFO BOX
+   ===================================================== */
+
+.handover-info-box {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 24px;
+
+    margin-bottom: 24px;
+
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 24px
+        rgba(0, 0, 0, 0.06);
+
+}
+
+
+.handover-info-icon {
+
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background: #eff6ff;
+
+    border-radius: 16px;
+
+    font-size: 30px;
+
+}
+
+
+.handover-info-box h2 {
+
+    margin: 0 0 6px;
+
+    color: #111827;
+
+    font-size: 22px;
+
+}
+
+
+.handover-info-box p {
+
+    margin: 0;
+
+    color: #64748b;
+
+    line-height: 1.6;
+
+}
+
+
+/* =====================================================
+   SEARCH
+   ===================================================== */
+
+.handover-tools {
+
+    padding: 24px;
+
+    margin-bottom: 24px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 24px
+        rgba(0, 0, 0, 0.06);
+
+}
+
+
+.search-box {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+
+.search-box label {
+
+    font-weight: 600;
+
+    color: #1e293b;
+
+}
+
+
+.search-box input {
+
+    width: 100%;
+
+    padding: 14px 16px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    font-size: 15px;
+
+}
+
+
+.search-box input:focus {
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(37, 99, 235, 0.12);
+
+}
+
+
+/* =====================================================
+   CLAIM SECTION
+   ===================================================== */
+
+.claims-section {
+
+    background: white;
+
+    padding: 28px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 24px
+        rgba(0, 0, 0, 0.06);
+
+}
+
+
+.section-title {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid #e5e7eb;
+
+}
+
+
+.section-title h2 {
+
+    margin: 0 0 6px;
+
+    font-size: 25px;
+
+    color: #111827;
+
+}
+
+
+.section-title p {
+
+    margin: 0;
+
+    color: #64748b;
+
+}
+
+
+.claim-count {
+
+    padding: 9px 16px;
+
+    background: #eef2ff;
+
+    color: #4f46e5;
+
+    border-radius: 999px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+}
+
+
+/* =====================================================
+   CLAIM CONTAINER
+   ===================================================== */
+
+.handover-claims-container {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+
+    padding-top: 24px;
+
+}
+
+
+/* =====================================================
+   CLAIM CARD
+   ===================================================== */
+
+.handover-claim-card {
+
+    padding: 22px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 16px;
+
+    background: #ffffff;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+.handover-claim-card:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(0, 0, 0, 0.08);
+
+}
+
+
+.claim-card-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    margin-bottom: 18px;
+
+}
+
+
+.claim-card-top h3 {
+
+    margin: 0;
+
+    color: #111827;
+
+    font-size: 20px;
+
+}
+
+
+.approved-badge {
+
+    padding: 6px 10px;
+
+    background: #dcfce7;
+
+    color: #15803d;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+}
+
+
+.claim-details {
+
+    display: grid;
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.claim-detail {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding-bottom: 8px;
+
+    border-bottom: 1px solid #f1f5f9;
+
+}
+
+
+.claim-detail strong {
+
+    color: #475569;
+
+}
+
+
+.claim-detail span {
+
+    color: #111827;
+
+    text-align: right;
+
+}
+
+
+/* =====================================================
+   HANDOVER BUTTON
+   ===================================================== */
+
+.handover-button {
+
+    width: 100%;
+
+    border: none;
+
+    padding: 13px 18px;
+
+    border-radius: 10px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: background 0.2s ease;
+
+}
+
+
+.handover-button:hover {
+
+    background: #1d4ed8;
+
+}
+
+
+/* =====================================================
+   EMPTY STATE
+   ===================================================== */
+
+.empty-state {
+
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    padding: 70px 20px;
+
+    border: 1px dashed #cbd5e1;
+
+    border-radius: 16px;
+
+}
+
+
+.empty-icon {
+
+    font-size: 48px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.empty-state h3 {
+
+    margin: 0 0 8px;
+
+    color: #1e293b;
+
+}
+
+
+.empty-state p {
+
+    margin: 0;
+
+    color: #64748b;
+
+}
+
+
+/* =====================================================
+   MODAL
+   ===================================================== */
+
+.handover-modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(15, 23, 42, 0.60);
+
+}
+
+
+.handover-modal.show {
+
+    display: flex;
+
+}
+
+
+.handover-modal-content {
+
+    width: 100%;
+
+    max-width: 500px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    position: relative;
+
+    padding: 32px;
+
+    box-sizing: border-box;
+
+    background: white;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 25px 60px
+        rgba(0, 0, 0, 0.20);
+
+}
+
+
+.modal-close {
+
+    position: absolute;
+
+    top: 15px;
+
+    right: 18px;
+
+    width: 36px;
+
+    height: 36px;
+
+    border: none;
+
+    background: #f1f5f9;
+
+    border-radius: 50%;
+
+    font-size: 24px;
+
+    color: #475569;
+
+    cursor: pointer;
+
+}
+
+
+.modal-icon {
+
+    width: 64px;
+
+    height: 64px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin: 0 auto 15px;
+
+    background: #eff6ff;
+
+    border-radius: 18px;
+
+    font-size: 32px;
+
+}
+
+
+.handover-modal-content h2 {
+
+    margin: 0;
+
+    text-align: center;
+
+    color: #111827;
+
+}
+
+
+.modal-description {
+
+    text-align: center;
+
+    color: #64748b;
+
+    line-height: 1.5;
+
+    margin: 10px 0 20px;
+
+}
+
+
+/* =====================================================
+   SELECTED ITEM
+   ===================================================== */
+
+.selected-item-details {
+
+    margin-bottom: 20px;
+
+    padding: 16px;
+
+    background: #f8fafc;
+
+    border-radius: 12px;
+
+}
+
+
+.selected-item-details h3 {
+
+    margin: 0 0 10px;
+
+    color: #111827;
+
+}
+
+
+.selected-item-details p {
+
+    margin: 6px 0;
+
+    color: #475569;
+
+}
+
+
+/* =====================================================
+   CODE INPUT
+   ===================================================== */
+
+.code-input-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+
+.code-input-group label {
+
+    font-weight: 600;
+
+    color: #1e293b;
+
+}
+
+
+.code-input-group input {
+
+    width: 100%;
+
+    padding: 16px;
+
+    box-sizing: border-box;
+
+    border: 2px solid #d1d5db;
+
+    border-radius: 12px;
+
+    font-size: 26px;
+
+    font-weight: 700;
+
+    letter-spacing: 10px;
+
+    text-align: center;
+
+    outline: none;
+
+}
+
+
+.code-input-group input:focus {
+
+    border-color: #2563eb;
+
+}
+
+
+/* =====================================================
+   MESSAGE
+   ===================================================== */
+
+.handover-message {
+
+    min-height: 20px;
+
+    margin-top: 10px;
+
+    color: #dc2626;
+
+    font-size: 14px;
+
+}
+
+
+/* =====================================================
+   MODAL BUTTONS
+   ===================================================== */
+
+.modal-actions {
+
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 18px;
+
+}
+
+
+.btn {
+
+    flex: 1;
+
+    padding: 13px 16px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+}
+
+
+.btn-cancel {
+
+    background: #e2e8f0;
+
+    color: #334155;
+
+}
+
+
+.btn-complete {
+
+    background: #16a34a;
+
+    color: white;
+
+}
+
+
+.btn-complete:hover {
+
+    background: #15803d;
+
+}
+
+
+/* =====================================================
+   BOTTOM NAVIGATION
+   ===================================================== */
+
+.bottom-navigation {
+
+    position: fixed;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 0;
+
+    z-index: 1000;
+
+    display: flex;
+
+    width: 100%;
+
+    max-width: 100%;
+
+    box-sizing: border-box;
+
+    background: white;
+
+    border-top: 1px solid #e5e7eb;
+
+    box-shadow:
+        0 -5px 20px
+        rgba(0, 0, 0, 0.08);
+
+}
+
+
+.bottom-nav-item {
+
+    flex: 1;
+
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 5px;
+
+    padding: 10px 5px;
+
+    text-decoration: none;
+
+    color: #475569;
+
+}
+
+
+.bottom-nav-icon {
+
+    font-size: 23px;
+
+}
+
+
+.bottom-nav-text {
+
+    font-size: 13px;
+
+}
+
+
+.bottom-nav-item.active {
+
+    color: #4f46e5;
+
+}
+
+
+.bottom-nav-item.logout {
+
+    color: #dc2626;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 800px) {
+
+    .handover-header {
+
+        width: calc(100% - 24px);
+
+        padding: 28px 24px;
+
+        margin: 20px auto;
+
+    }
+
+
+    .handover-container {
+
+        width: calc(100% - 24px);
+
+    }
+
+
+    .handover-header h1 {
+
+        font-size: 28px;
+
+    }
+
+
+    .handover-claims-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .handover-info-box {
+
+        align-items: flex-start;
+
+    }
+
+
+    .claims-section {
+
+        padding: 20px;
+
+    }
+
+
+    .section-title {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .claim-detail {
+
+        flex-direction: column;
+
+        gap: 3px;
+
+    }
+
+
+    .claim-detail span {
+
+        text-align: left;
+
+    }
+
+
+    .modal-actions {
+
+        flex-direction: column;
+
+    }
+
+
+    .bottom-nav-text {
+
+        font-size: 11px;
+
+    }
+
+}
+
+/* =====================================================
+   PORTAL LOGO
+   ===================================================== */
+
+.portal-logo {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background: #ffffff;
+
+    border-radius: 14px;
+
+    font-size: 28px;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Header layout */
+
+.portal-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 16px 30px;
+
+    background: #ffffff;
+
+    box-sizing: border-box;
+}
+
+
+/* Header title */
+
+.portal-header h1 {
+    margin: 0;
+
+    font-size: 22px;
+
+    color: #111827;
+}
+
+
+/* Header subtitle */
+
+.portal-header p {
+    margin: 3px 0 0;
+
+    font-size: 13px;
+
+    color: #64748b;
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+    .portal-header {
+        padding: 14px 18px;
+    }
+
+    .portal-logo {
+        width: 46px;
+        height: 46px;
+        font-size: 24px;
+    }
+
+    .portal-header h1 {
+        font-size: 18px;
+    }
+
+    .portal-header p {
+        font-size: 12px;
+    }
+
+}

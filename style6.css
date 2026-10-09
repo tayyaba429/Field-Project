@@ -1,0 +1,1176 @@
+/* ==========================================
+   CAMPUS LOST & FOUND PORTAL
+   SEARCH PAGE
+   ========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fb;
+    color: #111827;
+    min-height: 100vh;
+    padding-bottom: 90px;
+}
+
+
+/* ==========================================
+   PORTAL HEADER
+   ========================================== */
+
+.portal-header {
+    width: 100%;
+    min-height: 76px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 5%;
+
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.portal-logo {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    border-radius: 12px;
+
+    background: #eef2ff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+
+    margin-right: 14px;
+}
+
+.portal-header h1 {
+    margin: 0;
+
+    font-size: 25px;
+
+    color: #4f46e5;
+
+    font-weight: 700;
+}
+
+.portal-header p {
+    margin: 3px 0 0;
+
+    font-size: 13px;
+
+    color: #6b7280;
+}
+
+
+/* ==========================================
+   MAIN
+   ========================================== */
+
+.search-main {
+    width: 100%;
+    max-width: 1400px;
+
+    margin: 30px auto;
+
+    padding: 0 3%;
+
+    overflow-x: hidden;
+}
+
+
+/* ==========================================
+   BLUE SEARCH HEADER
+   ========================================== */
+
+.search-header {
+    width: 100%;
+
+    min-height: 145px;
+
+    margin: 0 auto 28px;
+
+    padding: 34px 36px;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #3b82f6
+    );
+
+    border-radius: 20px;
+
+    color: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    box-shadow:
+        0 10px 25px rgba(37, 99, 235, 0.20);
+}
+
+.search-header h1 {
+    margin: 0 0 10px;
+
+    font-size: 36px;
+
+    line-height: 1.2;
+
+    color: #ffffff;
+}
+
+.search-header p {
+    margin: 0;
+
+    font-size: 16px;
+
+    line-height: 1.5;
+
+    color: #ffffff;
+}
+
+
+/* ==========================================
+   SEARCH CARD
+   ========================================== */
+
+.search-card {
+    width: 100%;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 17px;
+
+    padding: 28px;
+
+    margin-bottom: 32px;
+
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+
+/* ==========================================
+   SEARCH BOX
+   ========================================== */
+
+.search-box {
+    width: 100%;
+
+    margin-bottom: 24px;
+}
+
+.search-box label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: #1f2937;
+}
+
+
+/* ==========================================
+   SEARCH INPUT + BUTTON
+   ========================================== */
+
+.search-input-row {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+.search-input-row input {
+    flex: 1;
+
+    min-width: 0;
+
+    height: 56px;
+
+    padding: 0 17px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 11px;
+
+    background: #ffffff;
+
+    color: #111827;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.2s ease;
+}
+
+.search-input-row input:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+.search-input-row input::placeholder {
+    color: #9ca3af;
+}
+
+
+/* ==========================================
+   SEARCH BUTTON
+   ========================================== */
+
+.search-input-row button {
+    width: 130px;
+
+    height: 56px;
+
+    flex-shrink: 0;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background: #3478ea;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.search-input-row button:hover {
+    background: #2563eb;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 6px 15px rgba(37, 99, 235, 0.18);
+}
+
+
+/* ==========================================
+   FILTERS
+   ========================================== */
+
+.search-filters {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+.filter-group {
+    min-width: 0;
+}
+
+.filter-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    color: #374151;
+}
+
+.filter-group select {
+    width: 100%;
+
+    height: 52px;
+
+    padding: 0 14px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #111827;
+
+    font-size: 14px;
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+.filter-group select:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+
+/* ==========================================
+   RESULTS HEADER
+   ========================================== */
+
+.results-header {
+    width: 100%;
+
+    margin-bottom: 18px;
+}
+
+.results-header h2 {
+    margin: 0 0 5px;
+
+    font-size: 25px;
+
+    color: #111827;
+}
+
+.results-header p {
+    margin: 0;
+
+    font-size: 14px;
+
+    color: #6b7280;
+}
+
+
+/* ==========================================
+   SEARCH RESULTS
+   ========================================== */
+
+.search-results {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 22px;
+}
+
+
+/* ==========================================
+   ITEM RESULT CARD
+   ========================================== */
+
+.item-result-card {
+    width: 100%;
+
+    min-width: 0;
+
+    padding: 22px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 5px 16px rgba(0, 0, 0, 0.05);
+
+    overflow: hidden;
+
+    transition: 0.2s ease;
+}
+
+.item-result-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 9px 22px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ==========================================
+   RESULT CARD TOP
+   ========================================== */
+
+.result-card-top {
+    width: 100%;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 14px;
+
+    margin-bottom: 16px;
+}
+
+.result-card-title {
+    min-width: 0;
+}
+
+.result-card-title h3 {
+    margin: 0 0 6px;
+
+    font-size: 19px;
+
+    color: #111827;
+
+    word-break: break-word;
+}
+
+.result-card-title p {
+    margin: 0;
+
+    font-size: 12px;
+
+    color: #6b7280;
+}
+
+
+/* ==========================================
+   TYPE BADGE
+   ========================================== */
+
+.type-badge {
+    flex-shrink: 0;
+
+    padding: 6px 11px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+.type-badge.lost {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.type-badge.found {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+
+/* ==========================================
+   RESULT IMAGE
+   ========================================== */
+
+.result-image {
+    width: 100%;
+
+    height: 210px;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 12px;
+
+    margin-bottom: 16px;
+
+    border: 1px solid #e5e7eb;
+}
+
+.no-image {
+    width: 100%;
+
+    height: 170px;
+
+    margin-bottom: 16px;
+
+    border-radius: 12px;
+
+    background: #f3f4f6;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 40px;
+
+    color: #9ca3af;
+}
+
+
+/* ==========================================
+   RESULT INFORMATION
+   ========================================== */
+
+.result-info {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+
+    margin-bottom: 17px;
+}
+
+.result-info p {
+    min-width: 0;
+
+    margin: 0;
+
+    padding: 11px;
+
+    background: #f8fafc;
+
+    border-radius: 9px;
+
+    font-size: 12px;
+
+    line-height: 1.4;
+
+    color: #4b5563;
+
+    word-break: break-word;
+}
+
+.result-info strong {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 11px;
+
+    color: #111827;
+}
+
+
+/* ==========================================
+   VIEW DETAILS BUTTON
+   ========================================== */
+
+.view-item-btn {
+    width: 100%;
+
+    height: 44px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #eef2ff;
+
+    color: #4f46e5;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.view-item-btn:hover {
+    background: #e0e7ff;
+}
+
+
+/* ==========================================
+   EMPTY RESULTS
+   ========================================== */
+
+.empty-results {
+    grid-column: 1 / -1;
+
+    width: 100%;
+
+    min-height: 260px;
+
+    padding: 45px 25px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 16px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+}
+
+.empty-icon {
+    width: 68px;
+    height: 68px;
+
+    margin-bottom: 16px;
+
+    border-radius: 50%;
+
+    background: #eef2ff;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 29px;
+}
+
+.empty-results h3 {
+    margin-bottom: 7px;
+
+    font-size: 18px;
+
+    color: #374151;
+}
+
+.empty-results p {
+    margin: 0;
+
+    font-size: 13px;
+
+    color: #9ca3af;
+}
+
+
+/* ==========================================
+   MODAL
+   ========================================== */
+
+.item-modal {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(15, 23, 42, 0.55);
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 5000;
+
+    overflow-y: auto;
+}
+
+.item-modal-content {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 620px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.20);
+}
+
+.item-modal-content h2 {
+    margin: 0 0 22px;
+
+    font-size: 24px;
+
+    color: #111827;
+
+    padding-right: 35px;
+}
+
+
+/* ==========================================
+   MODAL CLOSE
+   ========================================== */
+
+.modal-close {
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    width: 36px;
+    height: 36px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #f3f4f6;
+
+    color: #374151;
+
+    font-size: 23px;
+
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    background: #e5e7eb;
+}
+
+
+/* ==========================================
+   MODAL IMAGE
+   ========================================== */
+
+.modal-item-image {
+    width: 100%;
+
+    max-height: 300px;
+
+    object-fit: contain;
+
+    display: block;
+
+    margin-bottom: 20px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+}
+
+
+/* ==========================================
+   MODAL DETAILS
+   ========================================== */
+
+#itemDetails {
+    width: 100%;
+}
+
+.detail-row {
+    width: 100%;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 13px 0;
+
+    border-bottom: 1px solid #eef0f4;
+
+    font-size: 13px;
+}
+
+.detail-row strong {
+    flex-shrink: 0;
+
+    color: #111827;
+}
+
+.detail-row span {
+    color: #6b7280;
+
+    text-align: right;
+
+    word-break: break-word;
+}
+
+
+/* ==========================================
+   MODAL ACTIONS
+   ========================================== */
+
+.modal-actions {
+    display: flex;
+
+    justify-content: flex-end;
+
+    margin-top: 22px;
+}
+
+.close-btn {
+    min-width: 100px;
+
+    height: 43px;
+
+    padding: 0 18px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #4f46e5;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    background: #4338ca;
+}
+
+
+/* ==========================================
+   BOTTOM NAVIGATION
+   ========================================== */
+
+.bottom-nav {
+    position: fixed;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    max-width: 100%;
+
+    height: 72px;
+
+    padding: 0;
+    margin: 0;
+
+    background: #ffffff;
+
+    border-top: 1px solid #e5e7eb;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-evenly;
+
+    z-index: 3000;
+
+    box-shadow:
+        0 -3px 12px rgba(0, 0, 0, 0.06);
+
+    overflow: hidden;
+}
+
+.nav-item {
+    flex: 1;
+
+    min-width: 0;
+
+    max-width: 150px;
+
+    height: 60px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 4px;
+
+    text-decoration: none;
+
+    color: #6b7280;
+
+    border-radius: 10px;
+
+    transition: 0.2s ease;
+}
+
+.nav-item span {
+    font-size: 20px;
+
+    line-height: 1;
+}
+
+.nav-item small {
+    font-size: 11px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+.nav-item.active {
+    color: #4f46e5;
+
+    background: #f5f7ff;
+}
+
+.nav-item:hover {
+    color: #4f46e5;
+
+    background: #f5f7ff;
+}
+
+
+/* ==========================================
+   TABLET
+   ========================================== */
+
+@media (max-width: 900px) {
+
+    .search-main {
+        padding: 0 20px;
+    }
+
+    .search-results {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 650px) {
+
+    body {
+        padding-bottom: 80px;
+    }
+
+    .portal-header {
+        min-height: 70px;
+
+        padding: 0 18px;
+    }
+
+    .portal-logo {
+        width: 42px;
+        height: 42px;
+
+        font-size: 22px;
+
+        margin-right: 10px;
+    }
+
+    .portal-header h1 {
+        font-size: 18px;
+    }
+
+    .portal-header p {
+        font-size: 11px;
+    }
+
+
+    .search-main {
+        margin: 20px auto;
+
+        padding: 0 12px;
+    }
+
+
+    .search-header {
+        min-height: 135px;
+
+        padding: 25px 22px;
+
+        border-radius: 16px;
+    }
+
+    .search-header h1 {
+        font-size: 28px;
+    }
+
+    .search-header p {
+        font-size: 14px;
+    }
+
+
+    .search-card {
+        padding: 20px 17px;
+
+        border-radius: 14px;
+    }
+
+
+    .search-input-row {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 10px;
+    }
+
+    .search-input-row input {
+        width: 100%;
+
+        height: 50px;
+    }
+
+    .search-input-row button {
+        width: 100%;
+
+        height: 50px;
+    }
+
+
+    .search-filters {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+
+    .results-header h2 {
+        font-size: 21px;
+    }
+
+
+    .item-result-card {
+        padding: 18px;
+    }
+
+
+    .result-image {
+        height: 190px;
+    }
+
+
+    .result-info {
+        grid-template-columns: 1fr;
+    }
+
+
+    .item-modal {
+        padding: 12px;
+    }
+
+    .item-modal-content {
+        padding: 24px 18px;
+
+        border-radius: 15px;
+    }
+
+
+    .detail-row {
+        flex-direction: column;
+
+        gap: 5px;
+    }
+
+    .detail-row span {
+        text-align: left;
+    }
+
+
+    .bottom-nav {
+        height: 68px;
+    }
+
+    .nav-item {
+        max-width: none;
+
+        height: 58px;
+    }
+
+    .nav-item span {
+        font-size: 18px;
+    }
+
+    .nav-item small {
+        font-size: 10px;
+    }
+
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+   ========================================== */
+
+@media (max-width: 400px) {
+
+    .portal-header h1 {
+        font-size: 16px;
+    }
+
+    .search-header {
+        padding: 22px 17px;
+    }
+
+    .search-header h1 {
+        font-size: 25px;
+    }
+
+    .search-card {
+        padding: 16px;
+    }
+
+    .result-card-top {
+        gap: 8px;
+    }
+
+    .result-card-title h3 {
+        font-size: 16px;
+    }
+
+    .type-badge {
+        font-size: 10px;
+
+        padding: 5px 8px;
+    }
+
+    .nav-item small {
+        font-size: 9px;
+    }
+
+}

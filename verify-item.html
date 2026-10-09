@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Verify Item - Campus Lost & Found Portal</title>
+
+    <link rel="stylesheet" href="../css/style14.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/verify-item.css">
+</head>
+
+<body>
+
+    <!-- PORTAL HEADER -->
+
+    <header class="portal-header">
+
+        <div class="portal-logo">
+            🏫
+        </div>
+
+        <div>
+            <h1 style="color: #7c3aed;">Campus Lost&Found Portal</h1>
+            <p></p>
+        </div>
+
+    </header>
+
+    <!-- BLUE PAGE HEADER -->
+
+    <section class="verify-header">
+
+        <div>
+            <h1>Verify Found Items</h1>
+
+            <p>
+                Check and verify found items received at the security desk.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- MAIN CONTENT -->
+
+    <main class="verify-container">
+
+        <!-- Search and Filter -->
+
+        <section class="verify-tools">
+
+            <div class="search-box">
+
+                <label for="verifySearch">
+                    Search Item
+                </label>
+
+                <input
+                    type="text"
+                    id="verifySearch"
+                    placeholder="Search by item name, category or location...">
+
+            </div>
+
+            <div class="filter-box">
+
+                <label for="verifyStatus">
+                    Status
+                </label>
+
+                <select id="verifyStatus">
+
+                    <option value="all">
+                        All Items
+                    </option>
+
+                    <option value="pending">
+                        Pending Verification
+                    </option>
+
+                    <option value="verified">
+                        Verified
+                    </option>
+
+                    <option value="rejected">
+                        Rejected
+                    </option>
+
+                </select>
+
+            </div>
+
+        </section>
+
+        <!-- ITEMS -->
+
+        <section class="items-section">
+
+            <div class="section-title">
+
+                <div>
+                    <h2>Found Items</h2>
+
+                    <p>
+                        Items received by the security desk.
+                    </p>
+                </div>
+
+                <span id="itemCount" class="item-count">
+                    0 Items
+                </span>
+
+            </div>
+
+            <!-- Items will be loaded by JavaScript -->
+
+            <div
+                id="verifyItemsContainer"
+                class="verify-items-container">
+
+                <div class="empty-state">
+
+                    <div class="empty-icon">
+                        📦
+                    </div>
+
+                    <h3>No Found Items</h3>
+
+                    <p>
+                        Received items will appear here for verification.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ITEM DETAILS MODAL -->
+
+    <div
+        id="verifyModal"
+        class="modal"
+        style="display: none;">
+
+        <div class="modal-content">
+
+            <button
+                type="button"
+                class="modal-close"
+                onclick="closeVerifyModal()">
+                ×
+            </button>
+
+            <h2>Verify Item</h2>
+
+            <div
+                id="verifyItemDetails"
+                class="verify-item-details">
+            </div>
+
+            <div class="verification-note">
+
+                <label for="verificationNote">
+                    Verification Note
+                </label>
+
+                <textarea
+                    id="verificationNote"
+                    rows="3"
+                    placeholder="Enter verification remarks...">
+                </textarea>
+
+            </div>
+
+            <div class="modal-buttons">
+
+                <button
+                    type="button"
+                    class="btn btn-reject"
+                    onclick="rejectItem()">
+                    ❌ Reject
+                </button>
+
+                <button
+                    type="button"
+                    class="btn btn-verify"
+                    onclick="verifyItem()">
+                    ✅ Verify Item
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- BOTTOM NAVIGATION -->
+
+    <nav class="bottom-navigation">
+
+        <a
+            href="security-dashboard.html"
+            class="bottom-nav-item">
+            <span class="bottom-nav-icon">🏠</span>
+            <span class="bottom-nav-text">Dashboard</span>
+        </a>
+
+        <a
+            href="receive-item.html"
+            class="bottom-nav-item">
+            <span class="bottom-nav-icon">📦</span>
+            <span class="bottom-nav-text">Receive</span>
+        </a>
+
+        <a
+            href="verify-item.html"
+            class="bottom-nav-item active">
+            <span class="bottom-nav-icon">🔍</span>
+            <span class="bottom-nav-text">Verify</span>
+        </a>
+
+        <a
+            href="approved-claims.html"
+            class="bottom-nav-item">
+            <span class="bottom-nav-icon">✅</span>
+            <span class="bottom-nav-text">Claims</span>
+        </a>
+
+        <a href="#"
+        class="bottom-nav-item logout"
+        onclick="securityLogout(); return false;">
+            <span class="bottom-nav-icon">🚪</span>
+            <span class="bottom-nav-text">Logout</span>
+        </a>
+
+    </nav>
+
+    <!-- JAVASCRIPT -->
+
+    <script src="../JS/db.js"></script>
+    <script src="../JS/security.js"></script>
+    <script src="../JS/security.js"></script>
+
+</body>
+</html>

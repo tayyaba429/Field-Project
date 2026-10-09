@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Analytics - Campus Lost & Found</title>
+
+    <link rel="stylesheet" href="../css/style11.css">
+    <link rel="stylesheet" href="../css/analytics.css">
+    
+</head>
+
+<body>
+    <header class="portal-header">
+    <div class="portal-logo">🏫</div>
+    <div>
+        <h1 style="color: #7c3aed;">Campus Lost&Found Portal</h1>
+        
+    </div>
+</header>
+    <main class="analytics-main">
+
+        <!-- Header -->
+
+        <section class="analytics-header">
+
+            <h1>Analytics</h1>
+
+            <p>
+                View statistics and performance of the
+                Campus Lost & Found Portal.
+            </p>
+
+        </section>
+
+        <section class="analytics-container">
+
+            <div class="analytics-cards">
+
+                <!-- Total Reports -->
+
+                <div class="analytics-card">
+
+                    <div class="analytics-icon">
+                        📋
+                    </div>
+
+                    <div>
+                        <h3 id="analyticsTotalReports">
+                            0
+                        </h3>
+
+                        <p>
+                            Total Reports
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- Lost Items -->
+
+                <div class="analytics-card">
+
+                    <div class="analytics-icon">
+                        🔍
+                    </div>
+
+                    <div>
+                        <h3 id="analyticsLost">
+                            0
+                        </h3>
+
+                        <p>
+                            Lost Items
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- Found Items -->
+
+                <div class="analytics-card">
+
+                    <div class="analytics-icon">
+                        📦
+                    </div>
+
+                    <div>
+                        <h3 id="analyticsFound">
+                            0
+                        </h3>
+
+                        <p>
+                            Found Items
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- Returned -->
+
+                <div class="analytics-card">
+
+                    <div class="analytics-icon">
+                        🎉
+                    </div>
+
+                    <div>
+                        <h3 id="analyticsReturned">
+                            0
+                        </h3>
+
+                        <p>
+                            Returned Items
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!--  REPORT STATISTICS  -->
+
+            <section class="analytics-section">
+
+                <div class="analytics-section-header">
+
+                    <div>
+
+                        <h2>
+                            Report Statistics
+                        </h2>
+
+                        <p>
+                            Overview of lost and found reports.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="statistics-grid">
+
+                    <!-- Lost -->
+
+                    <div class="stat-box">
+
+                        <div class="stat-title">
+                            Lost Items
+                        </div>
+
+                        <div class="stat-number"
+                             id="statLost">
+                            0
+                        </div>
+
+                        <div class="stat-bar">
+
+                            <div
+                                class="stat-bar-fill lost-bar"
+                                id="lostBar">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Found -->
+
+                    <div class="stat-box">
+
+                        <div class="stat-title">
+                            Found Items
+                        </div>
+
+                        <div class="stat-number"
+                             id="statFound">
+                            0
+                        </div>
+
+                        <div class="stat-bar">
+
+                            <div
+                                class="stat-bar-fill found-bar"
+                                id="foundBar">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Returned -->
+
+                    <div class="stat-box">
+
+                        <div class="stat-title">
+                            Returned Items
+                        </div>
+
+                        <div class="stat-number"
+                             id="statReturned">
+                            0
+                        </div>
+
+                        <div class="stat-bar">
+
+                            <div
+                                class="stat-bar-fill returned-bar"
+                                id="returnedBar">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!--  CATEGORY STATISTICS  -->
+
+            <section class="analytics-section">
+
+                <div class="analytics-section-header">
+
+                    <h2>
+                        Items by Category
+                    </h2>
+
+                    <p>
+                        Number of reports submitted in each category.
+                    </p>
+
+                </div>
+
+                <div class="category-list"
+                     id="categoryList">
+
+                    <div class="category-item">
+
+                        <div class="category-name">
+                            Electronics
+                        </div>
+
+                        <div class="category-progress">
+
+                            <div
+                                class="category-progress-bar"
+                                style="width: 0%"
+                                id="electronicsBar">
+                            </div>
+
+                        </div>
+
+                        <div
+                            class="category-count"
+                            id="electronicsCount">
+                            0
+                        </div>
+
+                    </div>
+
+                    <div class="category-item">
+
+                        <div class="category-name">
+                            Documents
+                        </div>
+
+                        <div class="category-progress">
+
+                            <div
+                                class="category-progress-bar"
+                                style="width: 0%"
+                                id="documentsBar">
+                            </div>
+
+                        </div>
+
+                        <div
+                            class="category-count"
+                            id="documentsCount">
+                            0
+                        </div>
+
+                    </div>
+
+                    <div class="category-item">
+
+                        <div class="category-name">
+                            Wallet
+                        </div>
+
+                        <div class="category-progress">
+
+                            <div
+                                class="category-progress-bar"
+                                style="width: 0%"
+                                id="walletBar">
+                            </div>
+
+                        </div>
+
+                        <div
+                            class="category-count"
+                            id="walletCount">
+                            0
+                        </div>
+
+                    </div>
+
+                    <div class="category-item">
+
+                        <div class="category-name">
+                            Keys
+                        </div>
+
+                        <div class="category-progress">
+
+                            <div
+                                class="category-progress-bar"
+                                style="width: 0%"
+                                id="keysBar">
+                            </div>
+
+                        </div>
+
+                        <div
+                            class="category-count"
+                            id="keysCount">
+                            0
+                        </div>
+
+                    </div>
+
+                    <div class="category-item">
+
+                        <div class="category-name">
+                            Bag
+                        </div>
+
+                        <div class="category-progress">
+
+                            <div
+                                class="category-progress-bar"
+                                style="width: 0%"
+                                id="bagBar">
+                            </div>
+
+                        </div>
+
+                        <div
+                            class="category-count"
+                            id="bagCount">
+                            0
+                        </div>
+
+                    </div>
+
+
+                    <div class="category-item">
+
+                        <div class="category-name">
+                            Clothing
+                        </div>
+
+                        <div class="category-progress">
+
+                            <div
+                                class="category-progress-bar"
+                                style="width: 0%"
+                                id="clothingBar">
+                            </div>
+
+                        </div>
+
+                        <div
+                            class="category-count"
+                            id="clothingCount">
+                            0
+                        </div>
+
+                    </div>
+
+                    <div class="category-item">
+
+                        <div class="category-name">
+                            Accessories
+                        </div>
+
+                        <div class="category-progress">
+
+                            <div
+                                class="category-progress-bar"
+                                style="width: 0%"
+                                id="accessoriesBar">
+                            </div>
+
+                        </div>
+
+                        <div
+                            class="category-count"
+                            id="accessoriesCount">
+                            0
+                        </div>
+
+                    </div>
+           
+                    <div class="category-item">
+
+                        <div class="category-name">
+                            Other
+                        </div>
+
+                        <div class="category-progress">
+
+                            <div class="category-progress-bar"
+                                 style="width: 0%"
+                                 id="otherBar">
+                            </div>
+
+                        </div>
+
+                        <div
+                            class="category-count"
+                            id="otherCount">
+                            0
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!--  USER STATISTICS -->
+
+            <section class="analytics-section">
+
+                <div class="analytics-section-header">
+
+                    <h2>
+                        User Statistics
+                    </h2>
+
+                    <p>
+                        Overview of registered portal users.
+                    </p>
+
+                </div>
+
+                <div class="user-statistics">
+
+                    <div class="user-stat-box">
+
+                        <span class="user-stat-icon">
+                            🎓
+                        </span>
+
+                        <div>
+
+                            <h3 id="analyticsStudents">
+                                0
+                            </h3>
+
+                            <p>
+                                Students
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="user-stat-box">
+
+                        <span class="user-stat-icon">
+                            🛡️
+                        </span>
+
+                        <div>
+
+                            <h3 id="analyticsSecurity">
+                                0
+                            </h3>
+
+                            <p>
+                                Security Staff
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="user-stat-box">
+
+                        <span class="user-stat-icon">
+                            👑
+                        </span>
+
+                        <div>
+
+                            <h3 id="analyticsAdmins">
+                                0
+                            </h3>
+
+                            <p>
+                                Admins
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!--  CLAIM STATISTICS  -->
+
+            <section class="analytics-section">
+
+                <div class="analytics-section-header">
+
+                    <h2>
+                        Claim Statistics
+                    </h2>
+
+                    <p>
+                        Overview of item claim and return status.
+                    </p>
+
+                </div>
+
+                <div class="claim-statistics">
+
+                    <div class="claim-stat">
+
+                        <span>
+                            ⏳
+                        </span>
+
+                        <div>
+
+                            <h3 id="analyticsPendingClaims">
+                                0
+                            </h3>
+
+                            <p>
+                                Pending Claims
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="claim-stat">
+
+                        <span>
+                            ✅
+                        </span>
+
+                        <div>
+
+                            <h3 id="analyticsApprovedClaims">
+                                0
+                            </h3>
+
+                            <p>
+                                Approved Claims
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="claim-stat">
+
+                        <span>
+                            ❌
+                        </span>
+
+                        <div>
+
+                            <h3 id="analyticsRejectedClaims">
+                                0
+                            </h3>
+
+                            <p>
+                                Rejected Claims
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="claim-stat">
+
+                        <span>
+                            🎉
+                        </span>
+
+                        <div>
+
+                            <h3 id="analyticsReturnedClaims">
+                                0
+                            </h3>
+
+                            <p>
+                                Returned Items
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <!--  BOTTOM NAVIGATION  -->
+
+    <nav class="bottom-navigation">
+
+        <a
+            href="admin-dashboard.html"
+            class="bottom-nav-item">
+
+            <span class="bottom-nav-icon">
+                🏠
+            </span>
+
+            <span class="bottom-nav-text">
+                Dashboard
+            </span>
+
+        </a>
+
+        <a
+            href="reports.html"
+            class="bottom-nav-item">
+
+            <span class="bottom-nav-icon">
+                📋
+            </span>
+
+            <span class="bottom-nav-text">
+                Reports
+            </span>
+
+        </a>
+
+        <a
+            href="users.html"
+            class="bottom-nav-item">
+
+            <span class="bottom-nav-icon">
+                👥
+            </span>
+
+            <span class="bottom-nav-text">
+                Users
+            </span>
+
+        </a>
+
+        <a
+            href="analytics.html"
+            class="bottom-nav-item active">
+
+            <span class="bottom-nav-icon">
+                📊
+            </span>
+
+            <span class="bottom-nav-text">
+                Analytics
+            </span>
+
+        </a>
+
+        <a
+            href="#"
+            class="bottom-nav-item logout"
+            onclick="adminLogout()">
+   
+            <span class="bottom-nav-icon">
+                🚪
+            </span>
+
+            <span class="bottom-nav-text">
+                Logout
+            </span>
+
+        </a>
+
+    </nav>
+
+    <!-- JAVASCRIPT  -->
+
+    <script src="../JS/db.js"></script>
+    <script src="../JS/auth.js"></script>
+    <script src="../JS/admin.js"></script>
+    <script src="../JS/analytics.js"></script>
+
+</body>
+</html>

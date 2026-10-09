@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Security Dashboard - Campus Lost & Found</title>
+
+    <link rel="stylesheet" href="../css/style12.css">
+    <link rel="stylesheet" href="../css/security-dashboard.css">
+</head>
+
+<body>
+
+<header class="portal-header">
+    <div class="portal-logo">🏫</div>
+    <div>
+        <h1 style="color: #7c3aed;">Campus Lost&Found Portal</h1>
+        <p></p>
+    </div>
+</header>
+
+    <!-- MAIN DASHBOARD -->
+
+    <main class="security-main">
+
+        <!-- Header -->
+        <section class="security-header">
+
+            <div>
+                <h1>Security Dashboard</h1>
+                <p>Manage and verify found items at the campus security desk.</p>
+            </div>
+
+            <div class="security-profile">
+                <div class="profile-icon">🛡️</div>
+                <div>
+                    <strong id="securityName">Security Staff</strong>
+                    <span>Security Desk</span>
+                </div>
+            </div>
+
+        </section>
+
+        <!--  SUMMARY CARDS -->
+
+        <section class="security-cards">
+
+            <div class="security-card">
+                <div class="security-card-icon">📦</div>
+
+                <div>
+                    <h3 id="totalFoundItems">0</h3>
+                    <p>Found Items</p>
+                </div>
+            </div>
+
+            <div class="security-card">
+                <div class="security-card-icon">⏳</div>
+
+                <div>
+                    <h3 id="pendingVerification">0</h3>
+                    <p>Pending Verification</p>
+                </div>
+            </div>
+
+            <div class="security-card">
+                <div class="security-card-icon">✅</div>
+
+                <div>
+                    <h3 id="verifiedItems">0</h3>
+                    <p>Verified Items</p>
+                </div>
+            </div>
+
+            <div class="security-card">
+                <div class="security-card-icon">🎉</div>
+
+                <div>
+                    <h3 id="returnedItems">0</h3>
+                    <p>Returned Items</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!--  QUICK ACTIONS -->
+
+        <section class="security-section">
+
+            <div class="section-heading">
+                <h2>Quick Actions</h2>
+                <p>Manage found items and handovers.</p>
+            </div>
+
+            <div class="quick-actions">
+
+                <a href="receive-item.html" class="action-card">
+
+                    <div class="action-icon">📦</div>
+
+                    <div>
+                        <h3>Receive Found Item</h3>
+                        <p>Register an item received at the security desk.</p>
+                    </div>
+
+                    <span class="action-arrow">→</span>
+
+                </a>
+
+                <a href="verify-item.html" class="action-card">
+
+                    <div class="action-icon">🔍</div>
+
+                    <div>
+                        <h3>Verify Items</h3>
+                        <p>Check and verify reported found items.</p>
+                    </div>
+
+                    <span class="action-arrow">→</span>
+
+                </a>
+
+                <a href="approved-claims.html" class="action-card">
+
+                    <div class="action-icon">📋</div>
+
+                    <div>
+                        <h3>Approved Claims</h3>
+                        <p>View claims approved by the administrator.</p>
+                    </div>
+
+                    <span class="action-arrow">→</span>
+
+                </a>
+
+                <a href="handover.html" class="action-card">
+
+                    <div class="action-icon">🔐</div>
+
+                    <div>
+                        <h3>Complete Handover</h3>
+                        <p>Verify the 4-digit code and return the item.</p>
+                    </div>
+
+                    <span class="action-arrow">→</span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+        <!--  RECENT FOUND ITEMS -->
+
+        <section class="security-section">
+
+            <div class="section-heading recent-heading">
+
+                <div>
+                    <h2>Recent Found Items</h2>
+                    <p>Recently submitted items awaiting action.</p>
+                </div>
+
+                <a href="verify-item.html" class="view-all">
+                    View All
+                </a>
+
+            </div>
+
+            <div class="recent-items" id="recentFoundItems">
+
+                <!-- JavaScript will load items here -->
+
+                <div class="empty-security">
+                    <div>📦</div>
+                    <h3>No Found Items</h3>
+                    <p>No found items are available right now.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!--  HANDOVER INFORMATION -->
+
+        <section class="security-section handover-info">
+
+            <div class="handover-icon">🔐</div>
+
+            <div>
+                <h2>Secure Handover</h2>
+
+                <p>
+                    Before returning an item, verify the student's
+                    4-digit handover code. Once verified, mark the
+                    item as returned.
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!--  BOTTOM NAVIGATION -->
+
+    <nav class="bottom-navigation">
+
+        <a href="security-dashboard.html"
+           class="bottom-nav-item active">
+
+            <span class="bottom-nav-icon">🏠</span>
+            <span class="bottom-nav-text">Dashboard</span>
+
+        </a>
+
+        <a href="receive-item.html"
+           class="bottom-nav-item">
+
+            <span class="bottom-nav-icon">📦</span>
+            <span class="bottom-nav-text">Receive</span>
+
+        </a>
+
+        <a href="verify-item.html"
+           class="bottom-nav-item">
+
+            <span class="bottom-nav-icon">🔍</span>
+            <span class="bottom-nav-text">Verify</span>
+
+        </a>
+
+        <a href="approved-claims.html"
+           class="bottom-nav-item">
+
+            <span class="bottom-nav-icon">✅</span>
+            <span class="bottom-nav-text">Claims</span>
+
+        </a>
+
+        <a href="#"
+           class="bottom-nav-item logout"
+           onclick="logout()">
+
+            <span class="bottom-nav-icon">🚪</span>
+            <span class="bottom-nav-text">Logout</span>
+
+        </a>
+
+    </nav>
+
+    <!--  JAVASCRIPT -->
+
+    <script src="../JS/db.js"></script>
+    <script src="../JS/auth.js"></script>
+    <script src="../JS/security.js"></script>
+
+</body>
+</html>

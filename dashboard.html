@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Student Dashboard - Campus Lost & Found Portal
+    </title>
+
+    <link rel="stylesheet"
+          href="../css/style2.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- PORTAL HEADER -->
+
+    <header class="portal-header">
+
+        <div class="portal-logo">
+            🏫
+        </div>
+
+        <div>
+            <h1>
+                Campus Lost&Found Portal
+            </h1>
+        </div>
+
+    </header>
+
+
+
+    <!-- ==========================================
+         MAIN DASHBOARD
+         ========================================== -->
+
+    <main class="dashboard-main">
+
+
+        <!-- ======================================
+             WELCOME HEADER
+             ====================================== -->
+
+        <section class="dashboard-header">
+
+            <div class="welcome-text">
+                Welcome back 👋
+            </div>
+
+            <h1 id="studentName">
+                Student
+            </h1>
+
+            <p>
+                Find what you lost.
+                Help others find what they lost.
+            </p>
+
+        </section>
+
+
+
+        <!-- ======================================
+             STUDENT STATISTICS
+             ====================================== -->
+
+        <section class="student-stats">
+
+
+            <!-- LOST -->
+
+            <div class="stat-card">
+
+                <h3 id="lostCount">
+                    0
+                </h3>
+
+                <p>
+                    Lost Reports
+                </p>
+
+            </div>
+
+
+            <!-- FOUND -->
+
+            <div class="stat-card">
+
+                <h3 id="foundCount">
+                    0
+                </h3>
+
+                <p>
+                    Found Reports
+                </p>
+
+            </div>
+
+
+            <!-- RETURNED -->
+
+            <div class="stat-card">
+
+                <h3 id="returnedCount">
+                    0
+                </h3>
+
+                <p>
+                    Returned Items
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ======================================
+             QUICK ACTIONS
+             ====================================== -->
+
+        <section class="quick-actions-section">
+
+            <h2>
+                Quick Actions
+            </h2>
+
+
+            <div class="quick-actions">
+
+
+                <!-- ==================================
+                     REPORT LOST
+                     ================================== -->
+
+                <a href="report-lost.html"
+                   class="quick-action-card lost-card">
+
+
+                    <div class="action-left">
+
+                        <div class="action-icon">
+                            🔴
+                        </div>
+
+
+                        <div class="quick-action-content">
+
+                            <h3>
+                                Report Lost
+                            </h3>
+
+                            <p>
+                                Report an item you have lost.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="action-arrow">
+                        ›
+                    </div>
+
+                </a>
+
+
+
+                <!-- ==================================
+                     REPORT FOUND
+                     ================================== -->
+
+                <a href="report-found.html"
+                   class="quick-action-card found-card">
+
+
+                    <div class="action-left">
+
+                        <div class="action-icon">
+                            🟢
+                        </div>
+
+
+                        <div class="quick-action-content">
+
+                            <h3>
+                                Report Found
+                            </h3>
+
+                            <p>
+                                Report an item you have found.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="action-arrow">
+                        ›
+                    </div>
+
+                </a>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ======================================
+             MY ACTIVITY
+             ====================================== -->
+
+        <section class="activity-section">
+
+            <h2>
+                My Activity
+            </h2>
+
+
+            <div
+                id="myReportsContainer"
+                class="my-reports-container">
+
+
+                <!-- Student reports will be loaded
+                     by student.js -->
+
+
+                <div class="activity-card">
+
+                    <h3>
+                        No Reports Yet
+                    </h3>
+
+                    <p>
+                        Your lost and found reports
+                        will appear here.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ==========================================
+         BOTTOM NAVIGATION
+         ========================================== -->
+
+    <nav class="bottom-nav">
+
+
+        <!-- HOME -->
+
+        <a href="dashboard.html"
+           class="nav-item active">
+
+            <span>
+                🏠
+            </span>
+
+            <small>
+                Home
+            </small>
+
+        </a>
+
+
+
+        <!-- SEARCH -->
+
+        <a href="search.html"
+           class="nav-item">
+
+            <span>
+                🔎
+            </span>
+
+            <small>
+                Search
+            </small>
+
+        </a>
+
+
+
+        <!-- CLAIMS -->
+
+        <a href="claims.html"
+           class="nav-item">
+
+            <span>
+                🤝
+            </span>
+
+            <small>
+                Claims
+            </small>
+
+        </a>
+
+
+
+        <!-- NOTIFICATIONS -->
+
+        <a href="notifications.html"
+           class="nav-item">
+
+            <span>
+                🔔
+            </span>
+
+            <small>
+                Alerts
+            </small>
+
+        </a>
+
+
+
+        <!-- LOGOUT -->
+
+        <a href="#"
+           class="nav-item"
+           onclick="logout(); return false;">
+
+            <span>
+                🚪
+            </span>
+
+            <small>
+                Logout
+            </small>
+
+        </a>
+
+
+    </nav>
+
+
+
+    <!-- ==========================================
+         JAVASCRIPT
+         ========================================== -->
+
+    <script src="../JS/db.js"></script>
+
+    <script src="../JS/auth.js"></script>
+
+    <script src="../JS/student.js"></script>
+
+
+</body>
+
+</html>

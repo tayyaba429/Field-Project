@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Notifications - Campus Lost&Found Portal</title>
+
+    <link rel="stylesheet"
+          href="../css/style18.css">
+
+</head>
+
+<body>
+
+
+    <!--  HEADER  -->
+
+    <header class="portal-header">
+
+        <div class="portal-logo">
+            🏫
+        </div>
+
+        <div>
+            <h1>Campus Lost & Found Portal</h1>
+            
+        </div>
+
+    </header>
+
+
+    <!--  MAIN -->
+
+    <main class="notifications-main">
+
+
+        <!-- PAGE HEADER -->
+
+        <section class="notifications-header">
+
+            <div>
+
+                <h1>Notifications</h1>
+
+                <p>
+                    Stay updated about your lost and found items,
+                    claims and handover.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="mark-all-btn"
+                onclick="markAllNotificationsRead()">
+
+                Mark All as Read
+
+            </button>
+
+        </section>
+
+
+
+        <!--  NOTIFICATIONS  -->
+
+        <section class="notifications-card">
+
+
+            <div class="notifications-title">
+
+                <h2>Your Notifications</h2>
+
+                <span id="unreadCount">
+                    0 Unread
+                </span>
+
+            </div>
+
+
+            <div
+                id="notificationsContainer"
+                class="notifications-container">
+
+
+                <!-- Notifications will be loaded by JavaScript -->
+
+
+                <div class="empty-notifications">
+
+                    <div class="empty-icon">
+                        🔔
+                    </div>
+
+                    <h3>
+                        No Notifications
+                    </h3>
+
+                    <p>
+                        You will see updates about your
+                        reports and claims here.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!--  BOTTOM NAVIGATION -->
+
+    <nav class="bottom-nav">
+
+
+        <a
+            href="dashboard.html"
+            class="nav-item">
+
+            <span>🏠</span>
+
+            <small>
+                Home
+            </small>
+
+        </a>
+
+
+        <a
+            href="search.html"
+            class="nav-item">
+
+            <span>🔎</span>
+
+            <small>
+                Search
+            </small>
+
+        </a>
+
+
+        <a
+            href="claims.html"
+            class="nav-item">
+
+            <span>🤝</span>
+
+            <small>
+                Claims
+            </small>
+
+        </a>
+
+
+        <a
+            href="notifications.html"
+            class="nav-item active">
+
+            <span>🔔</span>
+
+            <small>
+                Notifications
+            </small>
+
+        </a>
+
+
+        <a
+            href="#"
+            class="nav-item"
+            onclick="logout(); return false;">
+
+            <span>🚪</span>
+
+            <small>
+                Logout
+            </small>
+
+        </a>
+
+
+    </nav>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="../JS/db.js"></script>
+    <script src="../JS/auth.js"></script>
+    <script src="../JS/notifications.js"></script>
+
+
+</body>
+</html>

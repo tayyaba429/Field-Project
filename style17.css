@@ -1,0 +1,886 @@
+/* ==========================================
+   CAMPUS LOST & FOUND PORTAL
+   REPORT FOUND ITEM PAGE
+   ========================================== */
+
+
+/* ==========================================
+   RESET
+   ========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ==========================================
+   BODY
+   ========================================== */
+
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #f5f7fb;
+
+    color: #1f2937;
+
+    min-height: 100vh;
+
+    padding-bottom: 90px;
+
+}
+
+
+/* ==========================================
+   PORTAL HEADER
+   ========================================== */
+
+.portal-header {
+
+    width: 100%;
+
+    min-height: 75px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 6%;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 2px 10px rgba(0, 0, 0, 0.06);
+
+}
+
+
+.portal-logo {
+
+    width: 48px;
+
+    height: 48px;
+
+    border-radius: 12px;
+
+    background: #eef2ff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 25px;
+
+    margin-right: 14px;
+
+}
+
+
+.portal-header h1 {
+
+    margin: 0;
+
+    font-size: 22px;
+
+    color: #4f46e5;
+
+    font-weight: 700;
+
+}
+
+
+/* ==========================================
+   MAIN CONTAINER
+   ========================================== */
+
+.report-container {
+
+    width: 100%;
+
+    max-width: 850px;
+
+    margin: 35px auto;
+
+    padding: 0 20px;
+
+}
+
+
+/* ==========================================
+   REPORT CARD
+   ========================================== */
+
+.report-card {
+
+    width: 100%;
+
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    padding: 35px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.08);
+
+    border: 1px solid #e5e7eb;
+
+}
+
+
+/* ==========================================
+   REPORT ICON
+   ========================================== */
+
+.report-icon {
+
+    width: 70px;
+
+    height: 70px;
+
+    margin: 0 auto 18px;
+
+    border-radius: 50%;
+
+    background: #eef2ff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 32px;
+
+}
+
+
+/* ==========================================
+   TITLE
+   ========================================== */
+
+.report-card h1 {
+
+    text-align: center;
+
+    font-size: 28px;
+
+    color: #4f46e5;
+
+    margin-bottom: 8px;
+
+}
+
+
+/* ==========================================
+   SUBTITLE
+   ========================================== */
+
+.report-subtitle {
+
+    text-align: center;
+
+    font-size: 14px;
+
+    color: #6b7280;
+
+    margin-bottom: 30px;
+
+}
+
+
+/* ==========================================
+   MESSAGE
+   ========================================== */
+
+#message {
+
+    margin-bottom: 15px;
+
+    text-align: center;
+
+    font-size: 14px;
+
+}
+
+
+/* ==========================================
+   INPUT GROUP
+   ========================================== */
+
+.input-group {
+
+    margin-bottom: 20px;
+
+}
+
+
+/* ==========================================
+   LABEL
+   ========================================== */
+
+.input-group label {
+
+    display: block;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #374151;
+
+    margin-bottom: 8px;
+
+}
+
+
+/* ==========================================
+   TEXT INPUT
+   ========================================== */
+
+.input-group input[type="text"],
+.input-group input[type="date"],
+.input-group input[type="file"] {
+
+    width: 100%;
+
+    min-height: 48px;
+
+    padding: 12px 14px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #111827;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.2s ease;
+
+}
+
+
+/* ==========================================
+   EMAIL / PASSWORD LIKE INPUT
+   ========================================== */
+
+.input-group input:focus {
+
+    border-color: #4f46e5;
+
+    box-shadow:
+        0 0 0 3px rgba(79, 70, 229, 0.12);
+
+}
+
+
+/* ==========================================
+   SELECT
+   ========================================== */
+
+.input-group select {
+
+    width: 100%;
+
+    height: 48px;
+
+    padding: 0 14px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #111827;
+
+    font-size: 14px;
+
+    outline: none;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+}
+
+
+.input-group select:focus {
+
+    border-color: #4f46e5;
+
+    box-shadow:
+        0 0 0 3px rgba(79, 70, 229, 0.12);
+
+}
+
+
+/* ==========================================
+   TEXTAREA
+   ========================================== */
+
+.input-group textarea {
+
+    width: 100%;
+
+    min-height: 115px;
+
+    padding: 12px 14px;
+
+    resize: vertical;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #111827;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.2s ease;
+
+}
+
+
+.input-group textarea:focus {
+
+    border-color: #4f46e5;
+
+    box-shadow:
+        0 0 0 3px rgba(79, 70, 229, 0.12);
+
+}
+
+
+/* ==========================================
+   PLACEHOLDER
+   ========================================== */
+
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+
+    color: #9ca3af;
+
+}
+
+
+/* ==========================================
+   FILE INPUT
+   ========================================== */
+
+.input-group input[type="file"] {
+
+    padding: 11px;
+
+    cursor: pointer;
+
+    background: #f9fafb;
+
+}
+
+
+/* ==========================================
+   IMAGE PREVIEW
+   ========================================== */
+
+#foundImagePreview {
+
+    margin-top: 12px;
+
+    min-height: 10px;
+
+}
+
+
+#foundImagePreview img {
+
+    display: block;
+
+    width: 180px;
+
+    max-width: 100%;
+
+    height: auto;
+
+    border-radius: 12px;
+
+    border: 1px solid #e5e7eb;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.08);
+
+}
+
+
+/* ==========================================
+   SUBMIT BUTTON
+   ========================================== */
+
+.auth-btn {
+
+    width: 100%;
+
+    height: 52px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        135deg,
+        #4f46e5,
+        #6366f1
+    );
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+    margin-top: 5px;
+
+}
+
+
+.auth-btn:hover {
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 7px 18px rgba(79, 70, 229, 0.25);
+
+}
+
+
+.auth-btn:active {
+
+    transform: translateY(0);
+
+}
+
+
+/* ==========================================
+   BOTTOM NAVIGATION
+   ========================================== */
+
+.bottom-nav {
+
+    position: fixed;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 0;
+
+    width: 100%;
+
+    height: 72px;
+
+    background: #ffffff;
+
+    border-top: 1px solid #e5e7eb;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    z-index: 1000;
+
+    box-shadow:
+        0 -3px 12px rgba(0, 0, 0, 0.06);
+
+}
+
+
+/* ==========================================
+   NAV ITEM
+   ========================================== */
+
+.nav-item {
+
+    min-width: 75px;
+
+    height: 60px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 4px;
+
+    text-decoration: none;
+
+    color: #6b7280;
+
+    border-radius: 10px;
+
+    transition: 0.2s ease;
+
+}
+
+
+.nav-item span {
+
+    font-size: 21px;
+
+    line-height: 1;
+
+}
+
+
+.nav-item small {
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+}
+
+
+/* ==========================================
+   NAV HOVER
+   ========================================== */
+
+.nav-item:hover {
+
+    color: #4f46e5;
+
+    background: #f5f7ff;
+
+}
+
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 700px) {
+
+    .report-container {
+
+        margin: 25px auto;
+
+        padding: 0 12px;
+
+    }
+
+
+    .report-card {
+
+        padding: 25px 18px;
+
+        border-radius: 15px;
+
+    }
+
+
+    .report-card h1 {
+
+        font-size: 23px;
+
+    }
+
+
+    .report-icon {
+
+        width: 60px;
+
+        height: 60px;
+
+        font-size: 28px;
+
+    }
+
+
+    .portal-header {
+
+        padding: 0 20px;
+
+    }
+
+
+    .portal-header h1 {
+
+        font-size: 18px;
+
+    }
+
+
+    .portal-logo {
+
+        width: 42px;
+
+        height: 42px;
+
+        font-size: 22px;
+
+    }
+
+
+    .bottom-nav {
+
+        height: 68px;
+
+        gap: 8px;
+
+        justify-content: space-around;
+
+    }
+
+
+    .nav-item {
+
+        min-width: 60px;
+
+    }
+
+
+    .nav-item span {
+
+        font-size: 19px;
+
+    }
+
+
+    .nav-item small {
+
+        font-size: 10px;
+
+    }
+
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+   ========================================== */
+
+@media (max-width: 400px) {
+
+    .portal-header h1 {
+
+        font-size: 16px;
+
+    }
+
+
+    .report-card {
+
+        padding: 22px 15px;
+
+    }
+
+
+    .bottom-nav {
+
+        gap: 0;
+
+    }
+
+
+    .nav-item {
+
+        min-width: 55px;
+
+    }
+
+}
+
+
+/* Bottom Navigation - Responsive */
+
+.bottom-nav {
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    background: #ffffff;
+    border-top: 1px solid #e5e7eb;
+
+    z-index: 1000;
+}
+
+.nav-item {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 3px;
+}
+
+.nav-item span {
+    font-size: 22px;
+}
+
+.nav-item small {
+    font-size: 11px;
+}
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+
+    .bottom-nav {
+        height: 65px;
+    }
+
+    .nav-item span {
+        font-size: 20px;
+    }
+
+    .nav-item small {
+        font-size: 10px;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 480px) {
+
+    .bottom-nav {
+        height: 60px;
+    }
+
+    .nav-item span {
+        font-size: 18px;
+    }
+
+    .nav-item small {
+        font-size: 9px;
+    }
+
+    .nav-item {
+        gap: 2px;
+    }
+}
+
+/* Very Small Screens */
+@media screen and (max-width: 360px) {
+
+    .bottom-nav {
+        height: 56px;
+    }
+
+    .nav-item span {
+        font-size: 17px;
+    }
+
+    .nav-item small {
+        font-size: 8px;
+    }
+}
+
+
+/*  CAMPUS LOST & FOUND PORTAL HEADER */
+
+.portal-header {
+    width: 100%;
+    min-height: 75px;
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 6%;
+    box-sizing: border-box;
+
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.portal-logo {
+    width: 48px;
+    height: 48px;
+
+    background: #eef2ff;
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+    margin-right: 14px;
+}
+
+.portal-header h1 {
+    margin: 0;
+    font-size: 22px;
+    color: #4f46e5;
+    font-weight: 700;
+}
+
+.portal-header p {
+    margin: 3px 0 0;
+    font-size: 12px;
+    color: #6b7280;
+}
+
+
+/*  MOBILE */
+
+@media (max-width: 600px) {
+
+    .portal-header {
+        min-height: 65px;
+        padding: 0 18px;
+    }
+
+    .portal-logo {
+        width: 40px;
+        height: 40px;
+        font-size: 21px;
+        margin-right: 10px;
+    }
+
+    .portal-header h1 {
+        font-size: 17px;
+    }
+
+    .portal-header p {
+        font-size: 10px;
+    }
+}

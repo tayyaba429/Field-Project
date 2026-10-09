@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Complete Handover - Campus Lost & Found Portal
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style19.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/handover.css"
+    >
+
+</head>
+
+
+<body>
+    
+ <!-- PORTAL HEADER -->
+
+    <header class="portal-header">
+
+        <div class="portal-logo">
+            🏫
+        </div>
+
+        <div>
+
+            <h1>
+                Campus Lost&Found Portal
+            </h1>
+
+        </div>
+
+    </header>
+
+
+    <!-- ========================================= -->
+    <!-- PAGE HEADER -->
+    <!-- ========================================= -->
+
+    <section class="handover-header">
+
+        <div>
+
+            <h1>
+                Complete Handover
+            </h1>
+
+            <p>
+                Verify the student's 4-digit code
+                and complete the item handover.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================= -->
+    <!-- MAIN CONTENT -->
+    <!-- ========================================= -->
+
+    <main class="handover-container">
+
+
+        <!-- ===================================== -->
+        <!-- INFORMATION BOX -->
+        <!-- ===================================== -->
+
+        <section class="handover-info-box">
+
+            <div class="handover-info-icon">
+                🔐
+            </div>
+
+            <div>
+
+                <h2>
+                    Secure Handover
+                </h2>
+
+                <p>
+                    Ask the student for the 4-digit
+                    handover code provided after
+                    claim approval.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================================== -->
+        <!-- SEARCH / FILTER -->
+        <!-- ===================================== -->
+
+        <section class="handover-tools">
+
+            <div class="search-box">
+
+                <label for="handoverSearch">
+                    Search Claim
+                </label>
+
+                <input
+                    type="text"
+                    id="handoverSearch"
+                    placeholder="Search by item name or student ID..."
+                >
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================================== -->
+        <!-- APPROVED CLAIMS -->
+        <!-- ===================================== -->
+
+        <section class="claims-section">
+
+            <div class="section-title">
+
+                <div>
+
+                    <h2>
+                        Approved Claims
+                    </h2>
+
+                    <p>
+                        Claims waiting for secure handover.
+                    </p>
+
+                </div>
+
+                <span
+                    id="claimCount"
+                    class="claim-count"
+                >
+                    0 Claims
+                </span>
+
+            </div>
+
+
+            <div
+                id="handoverClaimsContainer"
+                class="handover-claims-container"
+            >
+
+                <div class="empty-state">
+
+                    <div class="empty-icon">
+                        📋
+                    </div>
+
+                    <h3>
+                        No Approved Claims
+                    </h3>
+
+                    <p>
+                        Approved claims will appear here.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ========================================= -->
+    <!-- HANDOVER MODAL -->
+    <!-- ========================================= -->
+
+    <div
+        id="handoverModal"
+        class="handover-modal"
+    >
+
+        <div class="handover-modal-content">
+
+
+            <button
+                type="button"
+                class="modal-close"
+                onclick="closeHandoverModal()"
+            >
+                ×
+            </button>
+
+
+            <div class="modal-icon">
+                🔐
+            </div>
+
+
+            <h2>
+                Verify Handover Code
+            </h2>
+
+
+            <p class="modal-description">
+                Ask the student to provide their
+                4-digit handover code.
+            </p>
+
+
+            <!-- SELECTED ITEM -->
+
+            <div
+                id="selectedItemDetails"
+                class="selected-item-details"
+            >
+            </div>
+
+
+            <!-- CODE -->
+
+            <div class="code-input-group">
+
+                <label for="handoverCode">
+                    4-Digit Handover Code
+                </label>
+
+                <input
+                    type="text"
+                    id="handoverCode"
+                    maxlength="4"
+                    inputmode="numeric"
+                    autocomplete="off"
+                    placeholder="0000"
+                >
+
+            </div>
+
+
+            <div
+                id="handoverMessage"
+                class="handover-message"
+            >
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="btn btn-cancel"
+                    onclick="closeHandoverModal()"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="button"
+                    class="btn btn-complete"
+                    onclick="completeHandoverFromModal()"
+                >
+                    ✅ Complete Handover
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================= -->
+    <!-- BOTTOM NAVIGATION -->
+    <!-- ========================================= -->
+
+    <nav class="bottom-navigation">
+
+
+        <a
+            href="security-dashboard.html"
+            class="bottom-nav-item"
+        >
+
+            <span class="bottom-nav-icon">
+                🏠
+            </span>
+
+            <span class="bottom-nav-text">
+                Dashboard
+            </span>
+
+        </a>
+
+
+        <a
+            href="receive-item.html"
+            class="bottom-nav-item"
+        >
+
+            <span class="bottom-nav-icon">
+                📦
+            </span>
+
+            <span class="bottom-nav-text">
+                Receive
+            </span>
+
+        </a>
+
+
+        <a
+            href="verify-item.html"
+            class="bottom-nav-item"
+        >
+
+            <span class="bottom-nav-icon">
+                🔍
+            </span>
+
+            <span class="bottom-nav-text">
+                Verify
+            </span>
+
+        </a>
+
+
+        <a
+            href="approved-claims.html"
+            class="bottom-nav-item"
+        >
+
+            <span class="bottom-nav-icon">
+                ✅
+            </span>
+
+            <span class="bottom-nav-text">
+                Claims
+            </span>
+
+        </a>
+
+
+        <a
+            href="#"
+            class="bottom-nav-item logout"
+            onclick="securityLogout(); return false;"
+        >
+
+            <span class="bottom-nav-icon">
+                🚪
+            </span>
+
+            <span class="bottom-nav-text">
+                Logout
+            </span>
+
+        </a>
+
+
+    </nav>
+
+
+    <!-- ========================================= -->
+    <!-- JAVASCRIPT -->
+    <!-- IMPORTANT: ../JS because HTML is inside Templates -->
+    <!-- ========================================= -->
+
+    <script src="../JS/db.js"></script>
+
+    <script src="../JS/auth.js"></script>
+
+    <script src="../JS/security.js"></script>
+
+    <script src="../JS/handover.js"></script>
+
+
+</body>
+
+</html>
